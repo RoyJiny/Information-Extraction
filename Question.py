@@ -49,8 +49,6 @@ entity_question_bank = [
     )
 ]
 
-
-
 class Question:
     def __init__(self, question_str):
         self.type = None
@@ -80,3 +78,5 @@ class Question:
             self.type = "GENERAL3"
             self.relation = [question_str.split("How many ")[1].split(" are also")[0],question_str.split(" are also ")[1]]
             return
+
+        print("Couldn't match question")

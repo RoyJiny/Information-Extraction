@@ -1,4 +1,5 @@
 from Question import Question
+from Onthology import Onthology
 
 import sys
 
@@ -27,15 +28,19 @@ if __name__ == "__main__":
     #     print(usage)
     #     exit(1)
 
-    parse_question("Who directed FILM 2?")
-    parse_question("Who produced FILM 2?")
-    parse_question("Is FILM 2 based on a book?")
-    parse_question("When was FILM 2 released?")
-    parse_question("How long is FILM 2?")
-    parse_question("Who starred in FILM 2?")
-    parse_question("Did Roy Jiny star in FILM 2?")
-    parse_question("When was Roy Jiny born?")
-    parse_question("What is the occupation of Roy Jiny?")
-    parse_question("How many films are based on books?")
-    parse_question("How many films starring Roy Jiny won an academy award?")
-    parse_question("How many teachers are also dancers?")
+    # parse_question("Who directed FILM 2?")
+    # parse_question("Who produced FILM 2?")
+    # parse_question("Is FILM 2 based on a book?")
+    # parse_question("When was FILM 2 released?")
+    # parse_question("How long is FILM 2?")
+    # parse_question("Who starred in FILM 2?")
+    # parse_question("Did Roy Jiny star in FILM 2?")
+    # parse_question("When was Roy Jiny born?")
+    # parse_question("What is the occupation of Roy Jiny?")
+    # parse_question("How many films are based on books?")
+    # parse_question("How many films starring Roy Jiny won an academy award?")
+    # parse_question("How many teachers are also dancers?")
+
+    onthology = Onthology("https://en.wikipedia.org/wiki/List_of_Academy_Award-winning_films")
+    onthology.collect_film_list()
+    onthology.collect_wiki_data_for_films()
