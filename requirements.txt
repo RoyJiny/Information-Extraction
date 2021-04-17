@@ -1,4 +1,6 @@
 re
 sys
+os
+json
 lxml.html
 requests

@@ -61,7 +61,7 @@ class Question:
             if re.search(question[0], question_str):
                 self.type = "ENTITY"
                 self.relation = question[1]
-                self.entity = question[2](question_str)
+                self.entity = question[2](question_str)[0]
                 return
 
         # special general questions:
@@ -80,3 +80,5 @@ class Question:
             return
 
         print("Couldn't match question")
+        return 10 # need to mark an unmatched question.
+        # TODO: check about parsering questions.
