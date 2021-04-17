@@ -10,6 +10,12 @@ def parse_question(question_str):
     print(f"entity:   {q.entity}")
     print(f"relation: {q.relation}\r\n")
 
+def create_onthology():
+    print("creating onthology")
+    onthology = Onthology("https://en.wikipedia.org/wiki/List_of_Academy_Award-winning_films")
+    onthology.collect_film_list()
+    onthology.collect_wiki_data_for_films()
+
 
 if __name__ == "__main__":
     # usage = "USAGE: python film_qa.py create | python film_qa.py question <question>"
@@ -41,6 +47,4 @@ if __name__ == "__main__":
     # parse_question("How many films starring Roy Jiny won an academy award?")
     # parse_question("How many teachers are also dancers?")
 
-    onthology = Onthology("https://en.wikipedia.org/wiki/List_of_Academy_Award-winning_films")
-    onthology.collect_film_list()
-    onthology.collect_wiki_data_for_films()
+    create_onthology()

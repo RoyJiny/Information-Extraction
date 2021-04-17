@@ -1,6 +1,8 @@
 import lxml.html
 import requests
 
+ONTHOLOGY_FILE_NAME = "onthology.nt"
+
 class Onthology:
     def __init__(self,URL):
         self.URL = URL
