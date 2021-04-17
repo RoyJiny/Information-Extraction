@@ -11,10 +11,15 @@ def parse_question(question_str):
     print(f"relation: {q.relation}\r\n")
 
 def create_onthology():
-    print("creating onthology")
+    print("creating onthology:")
     onthology = Onthology("https://en.wikipedia.org/wiki/List_of_Academy_Award-winning_films")
+    print("    collecting films")
     onthology.collect_film_list()
+    print("    collecting data for films")
     onthology.collect_wiki_data_for_films()
+    print("    creating onthology.nt")
+    onthology.create_onthology_file()
+    print("done creating onthology")
 
 
 if __name__ == "__main__":
