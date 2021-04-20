@@ -1,6 +1,7 @@
 import lxml.html
 import requests
 import json
+import re
 
 ONTHOLOGY_FILE_NAME = "onthology.nt"
 
@@ -59,7 +60,7 @@ class Onthology:
             if relation.relation_type == relation_type:
                 relation.to.append(film)
                 return
-        new_relation = Relation(relation_type,film)
+        new_relation = Relation(relation_type,[film])
         self.inverse_film_onthology[entity].append(new_relation)
 
     def get_sub_url_if_needed(self,doc,original_url,film):
@@ -92,13 +93,20 @@ class Onthology:
         for tablerow in doc.xpath("//table[contains(@class,'infobox')]//tr//th[@class='infobox-label']"):
             try:
                 label = tablerow.xpath(".//text()")[0]
-                value = tablerow.xpath("../td/a//text()") + tablerow.xpath("../td/text()") + tablerow.xpath("../td//li//text()")
+                value = tablerow.xpath("../td/a//text()") + tablerow.xpath("../td/text()")
+                for list_element in tablerow.xpath("../td//div/ul/li"):
+                    added_val = ",".join([text for text in list_element.xpath(".//text()") if not re.search(r"\[[0-9]*\]", text)]) # remove [1],[2]... fields
+                    value.append(added_val)
+                
+                if value == []:
+                    print(f"empty label:{label}\nfilm:{film}\n")
+                
                 relation = Relation(label,value)
                 self.film_onthology[film].append(relation)
                 for entity in value:
                     self.add_inverse_relation(film,label,entity)
-            except:
-                pass
+            except Exception as e:
+                print(f"parsing error.\nerror:{str(e)}\nfilm: {film}\nlabel:{label}\nvalue:{value}\n")
 
     def collect_wiki_data_for_films(self):
         """
