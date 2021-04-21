@@ -52,7 +52,7 @@ class Onthology:
 
     def add_inverse_relation(self,film,relation_type,entity):
         """ 
-        after adding all relation from a film, also add the opposite relation between the entity and the film
+        after adding a relation for a film, also add the opposite relation between the entity and the film
         """
         if not entity in self.inverse_film_onthology.keys():
             self.inverse_film_onthology[entity] = []
@@ -90,16 +90,20 @@ class Onthology:
             res = requests.get(url)
             doc = lxml.html.fromstring(res.content)
         
-        for tablerow in doc.xpath("//table[contains(@class,'infobox')]//tr//th[@class='infobox-label']"):
+        for tablerow in doc.xpath("//table[contains(@class,'infobox')][1]//tr//th[@class='infobox-label']"):
             try:
                 label = tablerow.xpath(".//text()")[0]
-                value = tablerow.xpath("../td/a//text()") + tablerow.xpath("../td/text()")
-                for list_element in tablerow.xpath("../td//div/ul/li"):
+                value = tablerow.xpath("../td/a//text()") + tablerow.xpath("../td/text()") + tablerow.xpath("../td/i//text()") + tablerow.xpath("../td/span//text()")
+                is_under_list = False
+                for list_element in tablerow.xpath("../td//div/ul/li")+tablerow.xpath("../td/ul/li"):
                     added_val = ",".join([text for text in list_element.xpath(".//text()") if not re.search(r"\[[0-9]*\]", text)]) # remove [1],[2]... fields
                     value.append(added_val)
+                    is_under_list = True
+                if not is_under_list:
+                    value += tablerow.xpath("../td/div//text()")
                 
                 if value == []:
-                    print(f"empty label:{label}\nfilm:{film}\n")
+                    continue
                 
                 relation = Relation(label,value)
                 self.film_onthology[film].append(relation)
@@ -107,6 +111,7 @@ class Onthology:
                     self.add_inverse_relation(film,label,entity)
             except Exception as e:
                 print(f"parsing error.\nerror:{str(e)}\nfilm: {film}\nlabel:{label}\nvalue:{value}\n")
+                pass
 
     def collect_wiki_data_for_films(self):
         """
