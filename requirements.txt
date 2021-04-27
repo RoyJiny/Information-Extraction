@@ -3,3 +3,4 @@ sys
 lxml.html
 requests
 json
+rdflib

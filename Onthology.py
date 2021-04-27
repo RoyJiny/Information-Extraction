@@ -34,9 +34,9 @@ class Onthology:
     def __init__(self,URL):
         self.URL = URL
         self.film_list = []
-        # self.film_onthology = {}
-        # self.inverse_film_onthology = {}
-        self.g = rdflib.Graph ()
+        self.film_onthology = {}
+        self.inverse_film_onthology = {}
+        self.graph = rdflib.Graph()
 
     def collect_film_list(self):
         """ 
@@ -53,18 +53,18 @@ class Onthology:
             except:
                 pass
 
-    # def add_inverse_relation(self,film,relation_type,entity):
-    #     """ 
-    #     after adding a relation for a film, also add the opposite relation between the entity and the film
-    #     """
-    #     if not entity in self.inverse_film_onthology.keys():
-    #         self.inverse_film_onthology[entity] = []
-    #     for relation in self.inverse_film_onthology[entity]:
-    #         if relation.relation_type == relation_type:
-    #             relation.to.append(film)
-    #             return
-    #     new_relation = Relation(relation_type,[film])
-    #     self.inverse_film_onthology[entity].append(new_relation)
+    def add_inverse_relation(self,film,relation_type,entity):
+        """ 
+        after adding a relation for a film, also add the opposite relation between the entity and the film
+        """
+        if not entity in self.inverse_film_onthology.keys():
+            self.inverse_film_onthology[entity] = []
+        for relation in self.inverse_film_onthology[entity]:
+            if relation.relation_type == relation_type:
+                relation.to.append(film)
+                return
+        new_relation = Relation(relation_type,[film])
+        self.inverse_film_onthology[entity].append(new_relation)
 
     def get_sub_url_if_needed(self,doc,original_url,film):
         """
@@ -84,15 +84,23 @@ class Onthology:
         """ 
         collect the data from wikipedia for a single film
         """
-        res = requests.get(url)
+        try:
+            res = requests.get(url,timeout=10)
+        except:
+            print(f"Error: got timeout (after 10 seconds) when fetching web data for film'{film}'\nurl: {url}")
+            return
         doc = lxml.html.fromstring(res.content)
         self.film_onthology[film] = []
         possible_new_url = self.get_sub_url_if_needed(doc,url,film)
         if possible_new_url is not None:
             url = possible_new_url
-            res = requests.get(url)
+            try:
+                res = requests.get(url,timeout=10)
+            except:
+                print(f"Error: got timeout (after 10 seconds) when fetching web data for film'{film}'\nurl: {url}")
+                return
             doc = lxml.html.fromstring(res.content)
-
+        
         for tablerow in doc.xpath("//table[contains(@class,'infobox')][1]//tr//th[@class='infobox-label']"):
             try:
                 label = tablerow.xpath(".//text()")[0]
@@ -107,15 +115,9 @@ class Onthology:
                 
                 if value == []:
                     continue
-                
-                if not is_under_list:
-                    for element in value:
-                        g.add((rdflib.URIRef(f'{BASIC_URL}{film}')), (rdflib.URIRef(f'{BASIC_URL}{label}')),(rdflib.URIRef(f'{BASIC_URL}{element}')))
-                else :
-                    g.add((rdflib.URIRef(f'{BASIC_URL}{film}')), (rdflib.URIRef(f'{BASIC_URL}{label}')),(rdflib.URIRef(f'{BASIC_URL}{value}')))
 
-                # relation = Relation(label,value)
-                # self.film_onthology[film].append(relation)
+                relation = Relation(label,value)
+                self.film_onthology[film].append(relation)
                 # for entity in value:
                 #     self.add_inverse_relation(film,label,entity)
             except Exception as e:
@@ -127,21 +129,45 @@ class Onthology:
         iterate over the film list and collect data for each one
         """
         for film in self.film_list:
+            print(f"        {film}")
             url = f"https://en.wikipedia.org/wiki/{film.replace(' ','_')}"
             self.collect_wiki_data_by_url(url,film)
-            if self.film_onthology[film] == []:
+            if film in self.film_onthology.keys() and self.film_onthology[film] == []:
                 # certain film names (like 'gravity') lead straight to a different wiki page, and not to a Disambiguation page.
                 # for almost all of them, adding the _(film) to the end of the url solves the problem.
                 self.collect_wiki_data_by_url(f"{url}_(film)",film)
 
-    # def create_onthology_file(self):
-    #     """
-    #     create the onthology file from the collected data
-    #     """
+    def create_graph(self):
+        filter_regex = re.compile('[^a-zA-Z0-9\-_\.!?$,\\/() ]') # remove weird characters that rdf won't accept as a url
+        for film in self.film_onthology.keys():
+            for relation in self.film_onthology[film]:
+                label = relation.relation_type
+                for entity in relation.to:
+                    filtered_film = filter_regex.sub('',film)
+                    filtered_label = filter_regex.sub('',label)
+                    filtered_entity = filter_regex.sub('',entity)
+                    e1 = rdflib.URIRef(f'{BASIC_URL}{filtered_film.replace(" ","_")}')
+                    r = rdflib.URIRef(f'{BASIC_URL}{filtered_label.replace(" ","_")}')
+                    r_inverse = rdflib.URIRef(f'{BASIC_URL}inverse/{filtered_label.replace(" ","_")}')
+                    e2 = rdflib.URIRef(f'{BASIC_URL}{filtered_entity.replace(" ","_")}')
+                    self.graph.add((e1,r,e2))
+                    self.graph.add((e2,r_inverse,e1))
 
-    #     onthology = {
-    #         "direct film relations": self.film_onthology,
-    #         "inverse film relations": self.inverse_film_onthology
-    #     }
-    #     with open('onthology.nt', 'w') as onthology_file:
-    #         json.dump(onthology, onthology_file, cls=OnthologyEncoder)
+    def create_onthology_file(self):
+        """
+        create the onthology file from the collected data
+        """
+        self.graph.serialize("onthology.nt", format="nt")
+        self.graph.parse("onthology.nt", format="nt")
+
+    def create_onthology_file_as_json(self):
+        """
+        create the onthology file from the collected data as a json
+        can also be used as an easy cache for getting the data straight back to a dictionary
+        """
+        onthology = {
+            "direct film relations": self.film_onthology,
+            "inverse film relations": self.inverse_film_onthology
+        }
+        with open('onthology.nt', 'w') as onthology_file:
+            json.dump(onthology, onthology_file, cls=OnthologyEncoder)
