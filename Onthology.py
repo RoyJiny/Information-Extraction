@@ -35,13 +35,12 @@ class Onthology:
         self.URL = URL
         self.film_list = []
         self.film_onthology = {}
-        self.inverse_film_onthology = {}
+        self.other_entity_onthology = {}
+        self.other_entity_list = []
         self.graph = rdflib.Graph()
 
     def collect_film_list(self):
-        """ 
-        collect and filter the film list
-        """
+        """ collect and filter the film list """
         res = requests.get(self.URL)
         doc = lxml.html.fromstring(res.content)
         for tablerow in doc.xpath(".//table[1]//tr"):
@@ -52,19 +51,6 @@ class Onthology:
                     self.film_list.append(filmname)
             except:
                 pass
-
-    def add_inverse_relation(self,film,relation_type,entity):
-        """ 
-        after adding a relation for a film, also add the opposite relation between the entity and the film
-        """
-        if not entity in self.inverse_film_onthology.keys():
-            self.inverse_film_onthology[entity] = []
-        for relation in self.inverse_film_onthology[entity]:
-            if relation.relation_type == relation_type:
-                relation.to.append(film)
-                return
-        new_relation = Relation(relation_type,[film])
-        self.inverse_film_onthology[entity].append(new_relation)
 
     def get_sub_url_if_needed(self,doc,original_url,film):
         """
@@ -81,9 +67,7 @@ class Onthology:
         return None
 
     def collect_wiki_data_by_url(self,url,film):
-        """ 
-        collect the data from wikipedia for a single film
-        """
+        """ collect the data from wikipedia for a single film """
         try:
             res = requests.get(url,timeout=10)
         except:
@@ -118,18 +102,15 @@ class Onthology:
 
                 relation = Relation(label,value)
                 self.film_onthology[film].append(relation)
-                # for entity in value:
-                #     self.add_inverse_relation(film,label,entity)
+                for entity in value:
+                    self.other_entity_list.append(entity)
             except Exception as e:
-                print(f"parsing error.\nerror:{str(e)}\nfilm: {film}\nlabel:{label}\nvalue:{value}\n")
+                # print(f"parsing error.\nerror:{str(e)}\nfilm: {film}\nlabel:{label}\nvalue:{value}\n")
                 pass
 
     def collect_wiki_data_for_films(self):
-        """
-        iterate over the film list and collect data for each one
-        """
+        """ iterate over the film list and collect data for each one """
         for film in self.film_list:
-            print(f"        {film}")
             url = f"https://en.wikipedia.org/wiki/{film.replace(' ','_')}"
             self.collect_wiki_data_by_url(url,film)
             if film in self.film_onthology.keys() and self.film_onthology[film] == []:
@@ -137,7 +118,41 @@ class Onthology:
                 # for almost all of them, adding the _(film) to the end of the url solves the problem.
                 self.collect_wiki_data_by_url(f"{url}_(film)",film)
 
+    def collect_wiki_data_for_other_entities(self):
+        """ collect the wikipedia data for any entity that has a relation to one of the films """
+        for entity in self.other_entity_list:
+            url = f"https://en.wikipedia.org/wiki/{entity.replace(' ','_')}"
+            try:
+                res = requests.get(url,timeout=10)
+            except:
+                print(f"Error: got timeout (after 10 seconds) when fetching web data for entity'{entity}'\nurl: {url}")
+                return
+            doc = lxml.html.fromstring(res.content)
+            
+            for tablerow in doc.xpath("//th[@class='infobox-label']"):
+                try:
+                    label = tablerow.xpath(".//text()")[0]
+                    value = tablerow.xpath("../td//text()")
+                    
+                    if label == "Born":
+                        filtered_birth_date = [text for text in value if re.search(r".[0-9]*-[0-9]*-[0-9]*.", text)][0]
+                        value = [filtered_birth_date]
+                    elif label == "Occupation":
+                        value = [text.replace(" ","") for text in value[0].split(",") if text != "\n"]
+                    else:
+                        continue
+
+                    if entity not in self.other_entity_onthology.keys():
+                        self.other_entity_onthology[entity] = []
+                    
+                    relation = Relation(label,value)
+                    self.other_entity_onthology[entity].append(relation)
+                except Exception as e:
+                    # print(f"parsing error.\nerror:{str(e)}\nentity: {entity}\nlabel:{label}\nvalue:{value}\n")
+                    pass
+
     def create_graph(self):
+        """ create the rdflib graph """
         filter_regex = re.compile('[^a-zA-Z0-9\-_\.!?$,\\/() ]') # remove weird characters that rdf won't accept as a url
         for film in self.film_onthology.keys():
             for relation in self.film_onthology[film]:
@@ -152,11 +167,20 @@ class Onthology:
                     e2 = rdflib.URIRef(f'{BASIC_URL}{filtered_entity.replace(" ","_")}')
                     self.graph.add((e1,r,e2))
                     self.graph.add((e2,r_inverse,e1))
+        for entity in self.other_entity_onthology.keys():
+            for relation in self.other_entity_onthology[entity]:
+                label = relation.relation_type
+                for value in relation.to:
+                    filtered_entity = filter_regex.sub('',entity)
+                    filtered_label = filter_regex.sub('',label)
+                    filtered_value = filter_regex.sub('',value)
+                    e1 = rdflib.URIRef(f'{BASIC_URL}{filtered_entity.replace(" ","_")}')
+                    r = rdflib.URIRef(f'{BASIC_URL}{filtered_label.replace(" ","_")}')
+                    e2 = rdflib.URIRef(f'{BASIC_URL}{filtered_value.replace(" ","_")}')
+                    self.graph.add((e1,r,e2))
 
     def create_onthology_file(self):
-        """
-        create the onthology file from the collected data
-        """
+        """ create the onthology file from the collected data """
         self.graph.serialize("onthology.nt", format="nt")
         self.graph.parse("onthology.nt", format="nt")
 

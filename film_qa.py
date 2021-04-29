@@ -25,6 +25,8 @@ def create_onthology():
     onthology.collect_film_list()
     print("    collecting data for films")
     onthology.collect_wiki_data_for_films()
+    print("    collecting data for related entities")
+    onthology.collect_wiki_data_for_other_entities()
     print("    creating data graph")
     onthology.create_graph()
     print("    creating onthology.nt")
