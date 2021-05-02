@@ -128,28 +128,17 @@ class Onthology:
                 print(f"Error: got timeout (after 10 seconds) when fetching web data for entity'{entity}'\nurl: {url}")
                 return
             doc = lxml.html.fromstring(res.content)
-            
-            for tablerow in doc.xpath("//th[@class='infobox-label']"):
-                try:
-                    label = tablerow.xpath(".//text()")[0]
-                    value = tablerow.xpath("../td//text()")
-                    
-                    if label == "Born":
-                        filtered_birth_date = [text for text in value if re.search(r".[0-9]*-[0-9]*-[0-9]*.", text)][0]
-                        value = [filtered_birth_date]
-                    elif label == "Occupation":
-                        value = [text.replace(" ","") for text in value[0].split(",") if text != "\n"]
-                    else:
-                        continue
 
-                    if entity not in self.other_entity_onthology.keys():
-                        self.other_entity_onthology[entity] = []
-                    
-                    relation = Relation(label,value)
-                    self.other_entity_onthology[entity].append(relation)
-                except Exception as e:
-                    # print(f"parsing error.\nerror:{str(e)}\nentity: {entity}\nlabel:{label}\nvalue:{value}\n")
-                    pass
+            value_bday = doc.xpath("//span[@class='bday']//text()")
+            if value_bday == []:
+                value_bday = doc.xpath("//th[text()='Born']/../td//text()")    
+            value_occupation = doc.xpath("//th[text()='Occupation']/../td//text()")
+            if value_occupation != []:
+                value_occupation = [text.replace(" ","",1).replace(" ","_") for text in value_occupation[0].split(",") if text != "\n"]
+            if value_bday != [] or value_occupation != []:
+                relation_bday = Relation("Bday",value_bday)
+                relation_occupation = Relation("Occupation",value_occupation)
+                self.other_entity_onthology[entity] = [relation_bday,relation_occupation]
 
     def create_graph(self):
         """ create the rdflib graph """
