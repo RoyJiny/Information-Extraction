@@ -52,19 +52,18 @@ class Onthology:
             except:
                 pass
 
-    def get_sub_url_if_needed(self,doc,original_url,film):
+    def test_for_sepcial_url(self,doc,original_url,film):
         """
         test if something is needed to be added at the end of the url (e.g. '(film)').
-        return the new url if needed, else return None.
-        Notes: we want to test the the url has the film name in it (cut it by special characters for easier search).
-               take the last name of the list to make sure that if we have more than one year, we take the latest.
-               we identify that we are not in the real movie page by the link to 'Help:Disambiguation'.
+        return the true if needed, else return None. add the new possible titles to the list
+        Note: we identify that we are not in the real movie page by the link to 'Help:Disambiguation'.
         """
         film_name_for_sub_url = film.replace(' ','_').split('\'')[0]
         if len(doc.xpath("//a[contains(@href,'Help:Disambiguation')]")) > 0:
-            new_url_ending = doc.xpath(f"//a[contains(@href,'film)') and contains(@href,'/{film_name_for_sub_url}') and not(contains(@href,'//id'))]//@href")[-1].split('/')[-1]
-            return f"https://en.wikipedia.org/wiki/{new_url_ending}"
-        return None
+            for title in doc.xpath(f"//a[contains(@href,'film)') and contains(@href,'/{film_name_for_sub_url}') and not(contains(@href,'//id'))]//@href"):
+                self.film_list.append(title.split("/")[-1])                
+            return True
+        return False
 
     def collect_wiki_data_by_url(self,url,film):
         """ collect the data from wikipedia for a single film """
@@ -75,15 +74,8 @@ class Onthology:
             return
         doc = lxml.html.fromstring(res.content)
         self.film_onthology[film] = []
-        possible_new_url = self.get_sub_url_if_needed(doc,url,film)
-        if possible_new_url is not None:
-            url = possible_new_url
-            try:
-                res = requests.get(url,timeout=10)
-            except:
-                print(f"Error: got timeout (after 10 seconds) when fetching web data for film'{film}'\nurl: {url}")
-                return
-            doc = lxml.html.fromstring(res.content)
+        if self.test_for_sepcial_url(doc,url,film):
+            return # the new url will be handled in future call
         
         for tablerow in doc.xpath("//table[contains(@class,'infobox')][1]//tr//th[@class='infobox-label']"):
             try:
