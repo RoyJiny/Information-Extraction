@@ -45,25 +45,26 @@ class Onthology:
         doc = lxml.html.fromstring(res.content)
         for tablerow in doc.xpath(".//table[1]//tr"):
             try:
-                filmname = tablerow.xpath("./td[1]/i/a/text()")[0]
+                filmname = tablerow.xpath("./td[1]/i//a/@href")[0].split("/")[-1]    # get the exact name by the href url ("/wiki/film_name")
                 year = tablerow.xpath("./td[2]/a/text()")[0]
                 if int(year) >= 2010:
                     self.film_list.append(filmname)
-            except:
+            except Exception as e:
                 pass
 
-    def test_for_sepcial_url(self,doc,original_url,film):
-        """
-        test if something is needed to be added at the end of the url (e.g. '(film)').
-        return the true if needed, else return None. add the new possible titles to the list
-        Note: we identify that we are not in the real movie page by the link to 'Help:Disambiguation'.
-        """
-        film_name_for_sub_url = film.replace(' ','_').split('\'')[0]
-        if len(doc.xpath("//a[contains(@href,'Help:Disambiguation')]")) > 0:
-            for title in doc.xpath(f"//a[contains(@href,'film)') and contains(@href,'/{film_name_for_sub_url}') and not(contains(@href,'//id'))]//@href"):
-                self.film_list.append(title.split("/")[-1])                
-            return True
-        return False
+    # def test_for_sepcial_url(self,doc,original_url,film):
+    #     """
+    #     test if something is needed to be added at the end of the url (e.g. '(film)').
+    #     return the true if needed, else return None. add the new possible titles to the list
+    #     NOTE: we identify that we are not in the real movie page by the link to 'Help:Disambiguation'.
+    #     NOTE: not in use now
+    #     """
+    #     film_name_for_sub_url = film.replace(' ','_').split('\'')[0]
+    #     if len(doc.xpath("//a[contains(@href,'Help:Disambiguation')]")) > 0:
+    #         for title in doc.xpath(f"//a[contains(@href,'film)') and contains(@href,'/{film_name_for_sub_url}') and not(contains(@href,'//id'))]//@href"):
+    #             self.film_list.append(title.split("/")[-1])                
+    #         return True
+    #     return False
 
     def collect_wiki_data_by_url(self,url,film):
         """ collect the data from wikipedia for a single film """
@@ -74,8 +75,6 @@ class Onthology:
             return
         doc = lxml.html.fromstring(res.content)
         self.film_onthology[film] = []
-        if self.test_for_sepcial_url(doc,url,film):
-            return # the new url will be handled in future call
         
         for tablerow in doc.xpath("//table[contains(@class,'infobox')][1]//tr//th[@class='infobox-label']"):
             try:
@@ -105,10 +104,6 @@ class Onthology:
         for film in self.film_list:
             url = f"https://en.wikipedia.org/wiki/{film.replace(' ','_')}"
             self.collect_wiki_data_by_url(url,film)
-            if film in self.film_onthology.keys() and self.film_onthology[film] == []:
-                # certain film names (like 'gravity') lead straight to a different wiki page, and not to a Disambiguation page.
-                # for almost all of them, adding the _(film) to the end of the url solves the problem.
-                self.collect_wiki_data_by_url(f"{url}_(film)",film)
 
     def collect_wiki_data_for_other_entities(self):
         """ collect the wikipedia data for any entity that has a relation to one of the films """
@@ -165,14 +160,15 @@ class Onthology:
         self.graph.serialize("onthology.nt", format="nt")
         self.graph.parse("onthology.nt", format="nt")
 
-    def create_onthology_file_as_json(self):
-        """
-        create the onthology file from the collected data as a json
-        can also be used as an easy cache for getting the data straight back to a dictionary
-        """
-        onthology = {
-            "direct film relations": self.film_onthology,
-            "inverse film relations": self.inverse_film_onthology
-        }
-        with open('onthology.nt', 'w') as onthology_file:
-            json.dump(onthology, onthology_file, cls=OnthologyEncoder)
+    # def create_onthology_file_as_json(self):
+    #     """
+    #     create the onthology file from the collected data as a json
+    #     can also be used as an easy cache for getting the data straight back to a dictionary
+    #     NOTE: not in use
+    #     """
+    #     onthology = {
+    #         "direct film relations": self.film_onthology,
+    #         "inverse film relations": self.inverse_film_onthology
+    #     }
+    #     with open('onthology.nt', 'w') as onthology_file:
+    #         json.dump(onthology, onthology_file, cls=OnthologyEncoder)
