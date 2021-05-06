@@ -6,6 +6,7 @@ import os
 import json
 import re
 import rdflib
+import timeit
 
 ONTHOLOGY_FILE_PATH = "./onthology.nt"
 BASIC_URL = "https://en.wikipedia.org/wiki/"
@@ -19,6 +20,7 @@ def parse_question(question_str):
     return q
 
 def create_onthology():
+    start = timeit.default_timer()
     print("creating onthology:") 
     onthology = Onthology("https://en.wikipedia.org/wiki/List_of_Academy_Award-winning_films")
     print("    collecting films")
@@ -32,6 +34,8 @@ def create_onthology():
     print("    creating onthology.nt")
     onthology.create_onthology_file()
     print("done creating onthology")
+    stop = timeit.default_timer()
+    print(f"onthology creation runtime: {stop-start} seconds")
 
 def query_entity(parse_qst):
     _query = f"select ?x where "\
