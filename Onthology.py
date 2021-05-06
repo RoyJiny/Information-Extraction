@@ -79,6 +79,8 @@ class Onthology:
         for tablerow in doc.xpath("//table[contains(@class,'infobox')][1]//tr//th[@class='infobox-label']"):
             try:
                 label = tablerow.xpath(".//text()")[0]
+                if label not in ["Directed by","Produced by","Based on", "Release date", "Running time", "Starring", "Bday", "Occupation", "Language"]:
+                    continue
                 value = tablerow.xpath("../td/a//text()") + tablerow.xpath("../td/text()") + tablerow.xpath("../td/i//text()") + tablerow.xpath("../td/span//text()")
                 is_under_list = False
                 for list_element in tablerow.xpath("../td//div/ul/li")+tablerow.xpath("../td/ul/li"):
