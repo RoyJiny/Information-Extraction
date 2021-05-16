@@ -13,10 +13,10 @@ BASIC_URL = "https://en.wikipedia.org/wiki/"
 
 def parse_question(question_str):
     q = Question(question_str)
-    print(f"question: {q.question}")
-    print(f"type:     {q.type}")
-    print(f"entity:   {q.entity}")
-    print(f"relation: {q.relation}\r\n")
+    # print(f"question: {q.question}")
+    # print(f"type:     {q.type}")
+    # print(f"entity:   {q.entity}")
+    # print(f"relation: {q.relation}\r\n")
     return q
 
 def create_onthology():
@@ -38,32 +38,77 @@ def create_onthology():
     print(f"onthology creation runtime: {stop-start} seconds")
 
 def query_entity(parse_qst):
-    _query = f"select ?x where "\
-            "{ "f"<{BASIC_URL}{q.entity}> <{BASIC_URL}{q.relation}> ?x ."\
+    entity = parse_qst.entity[0].replace(" ", "_")
+    _query = f"select ?x where {'{'}"\
+            " "f"<{BASIC_URL}{entity}> <{BASIC_URL}{parse_qst.relation}> ?x ."\
             "}"
-    print(_query)
+    # print(_query)
     res = list(g.query(_query))
-    print(res)
+    _query = f"select ?x where {'{'}"\
+            " "f"<{BASIC_URL}{entity}> <{BASIC_URL}inverse/{parse_qst.relation}> ?x ."\
+            "}"
+    # print(_query)
+    for ret in list(g.query(_query)):
+        res.append(ret)
+    # print(res)
+    if (parse_qst.relation == "Based_on"):
+        if len(res):
+            return "Yes"
+        else:
+            return "No"
     clean_res = []
     for element in res:
-        clean_res.append(str(element).replace(f"(rdflib.term.URIREf('{BASIC_URL}","").replace("')",""))
+        clean_element = str(element).replace(f"(rdflib.term.URIRef('{BASIC_URL}","").replace("'),)","")
+        if (parse_qst.relation == "Release_date"):
+            clean_element = clean_element.split(",(,")[1].split(",),")[0]
+            # if re.search(",(,", clean_element):
+            #     clean_element = clean_element.split(",(,")[1]
+            # if re.search(",),", clean_element):
+            #     clean_element = clean_element.split(",),")[0]
+        clean_res.append(clean_element.strip().replace("_"," "))
+    if len(parse_qst.entity) > 1:
+        for element in clean_res:
+            if re.search(parse_qst.entity[1],element):
+                return "Yes"
+        return "No"
     clean_res.sort()
     return clean_res
 
 def query_general(parse_qst):    
-    if (q.type == "GENERAL1") or (q.type == "GENERAL2"):
-        _query = f"select ?x where "\
-            "{ "f"?x <{BASIC_URL}{q.relation}> ?y ."\
+    if (parse_qst.type == "GENERAL1"):
+        _query = f"select ?x where {'{'}"\
+            " "f"?x <{BASIC_URL}{parse_qst.relation}> ?y ."\
                 "}"
-    elif q.type == "GENERAL3":
-        _query = f"select ?x where "\
-            "{ "f"?x <{BASIC_URL}occupation> <{BASIC_URL}{q.relation[0]}> ."\
-            f" ?x <{BASIC_URL}occupation> <{BASIC_URL}{q.relation[1]}> ."\
+    elif parse_qst.type == "GENERAL2":
+        _query = f"select ?x where {'{'}"\
+            " "f"?x <{BASIC_URL}{parse_qst.relation}> <{BASIC_URL}{parse_qst.entity}> ."\
+                "}"
+    elif parse_qst.type == "GENERAL3":
+        _query = f"select ?x where {'{'}"\
+            " "f"?x <{BASIC_URL}occupation> <{BASIC_URL}{parse_qst.relation[0]}> ."\
+            f" ?x <{BASIC_URL}occupation> <{BASIC_URL}{parse_qst.relation[1]}> ."\
             "}"
-    print(_query)
+    else:
+        print("Couldn't match question")
+        exit(1)
     res = list(g.query(_query))
-    print(res)
     return len(res)
+
+def open_file ():
+    if not os.path.exists(ONTHOLOGY_FILE_PATH):
+        print("file not found")
+        exit(1)
+    if not os.path.isfile(ONTHOLOGY_FILE_PATH):
+        print("file not found")
+        exit(1)
+    try:
+        onthology = rdflib.Graph()
+        onthology.parse("onthology.nt", format="nt")
+    except:
+        print("Can't open onthology file")
+        exit(1)
+    return onthology
+
 
 if __name__ == "__main__":
     usage = "USAGE: python film_qa.py create | python film_qa.py question <question>"
@@ -78,14 +123,18 @@ if __name__ == "__main__":
             print("No question provided")
             exit(1)
         question = sys.argv[2]
-        print(f"Question: {question}")
+        # print(f"Question: {question}")
+        g = open_file()
         parse_qst = parse_question(question)	
         if not parse_qst:
             print (f"{not parse_qst}")
             print("Can't parse question")
             exit (1)
         elif parse_qst.type == "ENTITY":
-            print(retuquery_entity(parse_qst))
+            answers = query_entity(parse_qst)
+            if isinstance(answers,list):
+                answers = ', '.join(answers)
+            print(answers)
             exit(1)
         else:
             print(query_general(parse_qst))
@@ -97,6 +146,7 @@ if __name__ == "__main__":
     # parse_question("Who directed FILM 2?")
     # parse_question("Who produced FILM 2?")
     # parse_question("Is FILM 2 based on a book?")
+    # parse_question("Is The Jungle Book (2016 film) based on a book?")
     # parse_question("When was FILM 2 released?")
     # parse_question("How long is FILM 2?")
     # parse_question("Who starred in FILM 2?")
