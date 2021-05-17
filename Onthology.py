@@ -24,11 +24,13 @@ class Relation:
     def __repr__(self):
         return f"type: {self.relation_type}, to: {self.to}"
 
+
 class OnthologyEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, Relation): 
             return obj.__dict__
         return json.JSONEncoder.default(self, obj)
+
 
 class Onthology:
     def __init__(self,URL):
@@ -51,21 +53,7 @@ class Onthology:
                     self.film_list.append(filmname)
             except Exception as e:
                 pass
-
-    # def test_for_sepcial_url(self,doc,original_url,film):
-    #     """
-    #     test if something is needed to be added at the end of the url (e.g. '(film)').
-    #     return the true if needed, else return None. add the new possible titles to the list
-    #     NOTE: we identify that we are not in the real movie page by the link to 'Help:Disambiguation'.
-    #     NOTE: not in use now
-    #     """
-    #     film_name_for_sub_url = film.replace(' ','_').split('\'')[0]
-    #     if len(doc.xpath("//a[contains(@href,'Help:Disambiguation')]")) > 0:
-    #         for title in doc.xpath(f"//a[contains(@href,'film)') and contains(@href,'/{film_name_for_sub_url}') and not(contains(@href,'//id'))]//@href"):
-    #             self.film_list.append(title.split("/")[-1])                
-    #         return True
-    #     return False
-
+    
     def collect_wiki_data_by_url(self,url,film):
         """ collect the data from wikipedia for a single film """
         try:
@@ -84,7 +72,8 @@ class Onthology:
                 value = tablerow.xpath("../td/a//text()") + tablerow.xpath("../td/text()") + tablerow.xpath("../td/i//text()") + tablerow.xpath("../td/span//text()")
                 is_under_list = False
                 for list_element in tablerow.xpath("../td//div/ul/li")+tablerow.xpath("../td/ul/li"):
-                    added_val = ",".join([text for text in list_element.xpath(".//text()") if not re.search(r"\[[0-9]*\]", text)]) # remove [1],[2]... fields
+                    added_val = ",".join([text for text in list_element.xpath(".//*[not(self::a)]/text()") if not re.search(r"\[[0-9]*\]", text)]) # remove [1],[2]... fields
+                    added_val += ",".join([text.replace("/wiki/","") for text in list_element.xpath(".//a/@href")])
                     value.append(added_val)
                     is_under_list = True
                 if not is_under_list:
@@ -123,7 +112,8 @@ class Onthology:
                 value_bday = doc.xpath("//th[text()='Born']/../td//text()")    
             value_occupation = doc.xpath("//th[text()='Occupation']/../td//text()")
             if value_occupation != []:
-                value_occupation = [text.replace(" ","",1).replace(" ","_") for text in value_occupation[0].split(",") if text != "\n"]
+                if len(value_occupation) == 1:
+                    value_occupation = [text.replace(" ","",1).replace(" ","_") for text in value_occupation[0].split(",") if text != "\n"]
             if value_bday != [] or value_occupation != []:
                 relation_bday = Relation("Bday",value_bday)
                 relation_occupation = Relation("Occupation",value_occupation)
@@ -132,6 +122,7 @@ class Onthology:
     def create_graph(self):
         """ create the rdflib graph """
         filter_regex = re.compile('[^a-zA-Z0-9\-_\.!?$,\\/() ]') # remove weird characters that rdf won't accept as a url
+        
         for film in self.film_onthology.keys():
             for relation in self.film_onthology[film]:
                 label = relation.relation_type
@@ -141,10 +132,9 @@ class Onthology:
                     filtered_entity = filter_regex.sub('',entity)
                     e1 = rdflib.URIRef(f'{BASIC_URL}{filtered_film.replace(" ","_")}')
                     r = rdflib.URIRef(f'{BASIC_URL}{filtered_label.replace(" ","_")}')
-                    r_inverse = rdflib.URIRef(f'{BASIC_URL}inverse/{filtered_label.replace(" ","_")}')
                     e2 = rdflib.URIRef(f'{BASIC_URL}{filtered_entity.replace(" ","_")}')
                     self.graph.add((e1,r,e2))
-                    self.graph.add((e2,r_inverse,e1))
+        
         for entity in self.other_entity_onthology.keys():
             for relation in self.other_entity_onthology[entity]:
                 label = relation.relation_type
@@ -161,16 +151,3 @@ class Onthology:
         """ create the onthology file from the collected data """
         self.graph.serialize("onthology.nt", format="nt")
         self.graph.parse("onthology.nt", format="nt")
-
-    # def create_onthology_file_as_json(self):
-    #     """
-    #     create the onthology file from the collected data as a json
-    #     can also be used as an easy cache for getting the data straight back to a dictionary
-    #     NOTE: not in use
-    #     """
-    #     onthology = {
-    #         "direct film relations": self.film_onthology,
-    #         "inverse film relations": self.inverse_film_onthology
-    #     }
-    #     with open('onthology.nt', 'w') as onthology_file:
-    #         json.dump(onthology, onthology_file, cls=OnthologyEncoder)
