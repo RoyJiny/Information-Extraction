@@ -9,7 +9,7 @@ def query_entity(parse_qst,g):
             "}"
     res = list(g.query(_query))
     _query = f"select ?x where {'{'}"\
-            " "f"<{BASIC_URL}{entity}> <{BASIC_URL}inverse/{parse_qst.relation}> ?x ."\
+            " "f"?x <{BASIC_URL}{parse_qst.relation}> <{BASIC_URL}{entity}> ."\
             "}"
     for ret in list(g.query(_query)):
         res.append(ret)

@@ -82,6 +82,9 @@ class Onthology:
                 if value == []:
                     continue
 
+                if label == "Based on":
+                    value = ["".join(value)] # for based on the result is ["book name","by","writer"], so concat them all together
+
                 relation = Relation(label,value)
                 self.film_onthology[film].append(relation)
                 for entity in value:

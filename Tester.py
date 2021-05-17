@@ -9,16 +9,17 @@ def test(question,answer,onthology,colored):
     res = query(q,onthology)
     if res != answer:
         if colored: print(Fore.RED, end="")
-        print(f"Expected: {answer} ")
+        print(f"Expected: {answer}")
         if colored: print(Fore.RED, end="")
-        print(f"Actual:   {res} ")
+        print(f"Actual:   {res}")
         return 1
     else:
         if colored: print(Fore.GREEN, end="")
-        print(f"A: {res} ")
+        print(f"A: {res}")
         return 0
 
 questions = [
+    # given questions:
     ("Who directed Bao (film)?","Domee Shi"),
     ("Who produced 12 Years a Slave (film)","Anthony Katagas, Arnon Milchan, Bill Pohlad, Brad Pitt, Dede Gardner, Jeremy Kleiner, Steve McQueen"),
     ("Is The Jungle Book (2016 film) based on a book?","Yes"),
@@ -30,12 +31,14 @@ questions = [
     ("What is the occupation of Emma Watson?","activist, actress, model"),
     ("How many films starring Meryl Streep won an academy award?","2"),
     ("Who produced Brave (2012 film)?","Katherine Sarafian"),
-    ("Is The Brave (2012 film) based on a book?","No")
+    ("Is The Brave (2012 film) based on a book?","No"),
+    # more questions
+    ("How many films are based on books?","50"),
 ]
 
 
 def test_all(onthology,colored):
-    if colored: init() # for colors
+    if colored: init()
     print("Running Tester\n")
     error_count = 0
     
@@ -48,4 +51,4 @@ def test_all(onthology,colored):
             error_count += 1
     
     if colored: print(Style.RESET_ALL)
-    print(f"\n\n{error_count} errors")
+    print(f"\n\nerrors: {error_count}")
