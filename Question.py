@@ -43,6 +43,11 @@ entity_question_bank = [
         lambda q_str: [q_str.split("When was ")[1].split(" born")[0]]
     ),
     (
+        r"In what language is the film [()a-zA-Z0-9\s]*",
+        "Language",
+        lambda q_str: [q_str.split("In what language is the film ")[1]]
+    ),
+    (
         r"What is the occupation of [()a-zA-Z0-9\s]*",
         "Occupation",
         lambda q_str: [q_str.split("What is the occupation of ")[1]]

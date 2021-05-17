@@ -22,7 +22,7 @@ def query_entity(parse_qst,g):
     for element in res:
         clean_element = str(element).replace(f"(rdflib.term.URIRef('{BASIC_URL}","").replace("'),)","")
         if parse_qst.relation == "Release_date":
-            clean_element = clean_element.split(",(,")[1].split(",),")[0]
+            clean_element = clean_element.strip('(').strip(')').strip(',')
         clean_res.append(clean_element.strip().replace("_"," "))
     
     if len(parse_qst.entity) > 1:
