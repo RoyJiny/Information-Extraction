@@ -27,7 +27,7 @@ def query_entity(parse_qst,g):
     
     if len(parse_qst.entity) > 1:
         for element in clean_res:
-            if re.search(parse_qst.entity[1],element):
+            if parse_qst.entity[1] in element:
                 return "Yes"
         return "No"
     
@@ -51,17 +51,16 @@ def query_general(parse_qst,g):
             " "f"?x <{BASIC_URL}occupation> <{BASIC_URL}{parse_qst.relation[0]}> ."\
             f" ?x <{BASIC_URL}occupation> <{BASIC_URL}{parse_qst.relation[1]}> ."\
             "}"
+        print(_query)
     else:
-        print("Couldn't match question")
-        exit(1)
+        raise ValueError("Couldn't match question")
     res = list(g.query(_query))
     return str(len(res))
 
 
 def query(question, onthology):
     if not question:
-        print("Can't parse question")
-        exit (1)
+        raise ValueError("Can't parse question")
     elif question.type == "ENTITY":
         answers = query_entity(question,onthology)
         if isinstance(answers,list):

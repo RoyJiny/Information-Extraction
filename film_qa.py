@@ -1,7 +1,7 @@
 from Question import Question
 from Onthology import Onthology
 from Query import query
-from Tester import test_all
+from Tester.Tester import test_all
 
 import sys
 import os

@@ -72,7 +72,7 @@ class Onthology:
                 value = tablerow.xpath("../td/a//text()") + tablerow.xpath("../td/text()") + tablerow.xpath("../td/i//text()") + tablerow.xpath("../td/span//text()")
                 is_under_list = False
                 for list_element in tablerow.xpath("../td//div/ul/li")+tablerow.xpath("../td/ul/li"):
-                    added_val = ",".join([text for text in list_element.xpath(".//*[not(self::a)]/text()") if not re.search(r"\[[0-9]*\]", text)]) # remove [1],[2]... fields
+                    added_val = ",".join([text for text in list_element.xpath(".//*[not(self::a)]/text()")+list_element.xpath("./text()") if not re.search(r"\[[0-9]*\]", text)]) # remove [1],[2]... fields
                     added_val += ",".join([text.replace("/wiki/","") for text in list_element.xpath(".//a/@href")])
                     value.append(added_val)
                     is_under_list = True
@@ -84,6 +84,11 @@ class Onthology:
 
                 if label == "Based on":
                     value = ["".join(value)] # for based on the result is ["book name","by","writer"], so concat them all together
+                if label == "Release date":
+                    dates = []
+                    for txt in value:
+                        dates += [date for date in re.findall(r"[0-9]*-[0-9]*-[0-9]*", txt)]
+                    value = dates # get only dates in the correct format
 
                 relation = Relation(label,value)
                 self.film_onthology[film].append(relation)
@@ -113,10 +118,19 @@ class Onthology:
             value_bday = doc.xpath("//span[@class='bday']//text()")
             if value_bday == []:
                 value_bday = doc.xpath("//th[text()='Born']/../td//text()")    
-            value_occupation = doc.xpath("//th[text()='Occupation']/../td//text()")
+
+            value_occupation = [txt for txt in doc.xpath("//th[text()='Occupation']/../td//text()") if (txt != '' and txt != ',' and txt != ', ' and txt != '\n')]
             if value_occupation != []:
                 if len(value_occupation) == 1:
-                    value_occupation = [text.replace(" ","",1).replace(" ","_") for text in value_occupation[0].split(",") if text != "\n"]
+                    new_value_occupation = []
+                    for text in re.split(', |,',value_occupation[0]):
+                        if text != "\n" and text != "" and text != " ":
+                            new_txt = text.replace(" ","_")
+                            if new_txt.startswith("_"):
+                                new_txt.replace("_","",1)
+                            new_value_occupation.append(new_txt)
+                    value_occupation = new_value_occupation
+            
             if value_bday != [] or value_occupation != []:
                 relation_bday = Relation("Bday",value_bday)
                 relation_occupation = Relation("Occupation",value_occupation)
@@ -124,7 +138,7 @@ class Onthology:
 
     def create_graph(self):
         """ create the rdflib graph """
-        filter_regex = re.compile('[^a-zA-Z0-9\-_\.!?$,\\/() ]') # remove weird characters that rdf won't accept as a url
+        filter_regex = re.compile('[^a-zA-Z0-9\-_\.!?$,\\/() %]') # remove weird characters that rdf won't accept as a url
         
         for film in self.film_onthology.keys():
             for relation in self.film_onthology[film]:
