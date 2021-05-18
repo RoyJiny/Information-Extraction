@@ -61,4 +61,4 @@ def test_all(onthology,colored):
     if colored: print(Style.RESET_ALL)
     print(f"\n\ncorrect: {len(questions)-error_count}")
     print(f"wrong: {error_count}")
-    print(f"correctness: {(1-error_count/len(questions))*100}%")
+    print(f"correctness: {(1-error_count/len(questions))*100} %")

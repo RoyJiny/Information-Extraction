@@ -69,11 +69,12 @@ class Onthology:
                 label = tablerow.xpath(".//text()")[0]
                 if label not in ["Directed by","Produced by","Based on", "Release date", "Running time", "Starring", "Bday", "Occupation", "Language"]:
                     continue
-                value = tablerow.xpath("../td/a//text()") + tablerow.xpath("../td/text()") + tablerow.xpath("../td/i//text()") + tablerow.xpath("../td/span//text()")
+                value = tablerow.xpath("../td/a/*//text()") + tablerow.xpath("../td/text()") + tablerow.xpath("../td/i//text()") + tablerow.xpath("../td/span//text()")
+                value += [text.replace("/wiki/","") for text in tablerow.xpath("../td/a/@href") if not "#" in text]
                 is_under_list = False
                 for list_element in tablerow.xpath("../td//div/ul/li")+tablerow.xpath("../td/ul/li"):
                     added_val = ",".join([text for text in list_element.xpath(".//*[not(self::a)]/text()")+list_element.xpath("./text()") if not re.search(r"\[[0-9]*\]", text)]) # remove [1],[2]... fields
-                    added_val += ",".join([text.replace("/wiki/","") for text in list_element.xpath(".//a/@href")])
+                    added_val += ",".join([text.replace("/wiki/","") for text in list_element.xpath(".//a/@href") if not "#" in text])
                     value.append(added_val)
                     is_under_list = True
                 if not is_under_list:
@@ -112,12 +113,17 @@ class Onthology:
                 res = requests.get(url,timeout=10)
             except:
                 print(f"Error: got timeout (after 10 seconds) when fetching web data for entity'{entity}'\nurl: {url}")
-                return
+                # return
             doc = lxml.html.fromstring(res.content)
 
-            value_bday = doc.xpath("//span[@class='bday']//text()")
+            value_bday = doc.xpath("//table[contains(@class,'infobox')][1]//span[@class='bday']//text()")
             if value_bday == []:
-                value_bday = doc.xpath("//th[text()='Born']/../td//text()")    
+                value_bday = doc.xpath("//table[contains(@class,'infobox')][1]//th[text()='Born']/../td//text()")
+            new_value_bday = list(filter(lambda val: re.match(r"^[0-9]*-[0-9]*-[0-9]*$",val) != None ,value_bday)) # year-month-day
+            if new_value_bday == []:
+                new_value_bday = list(filter(lambda val: re.search(r"19[0-9]{2}",val) != None ,value_bday))
+                new_value_bday = [re.search(r"19[0-9]{2}",txt).group(0) for txt in new_value_bday] # just year
+            value_bday = new_value_bday
 
             value_occupation = [txt for txt in doc.xpath("//th[text()='Occupation']/../td//text()") if (txt != '' and txt != ',' and txt != ', ' and txt != '\n')]
             if value_occupation != []:
@@ -130,6 +136,7 @@ class Onthology:
                                 new_txt.replace("_","",1)
                             new_value_occupation.append(new_txt)
                     value_occupation = new_value_occupation
+            value_occupation = [txt.replace(" ,","").replace(", ","").replace(",","") for txt in value_occupation]
             
             if value_bday != [] or value_occupation != []:
                 relation_bday = Relation("Bday",value_bday)
