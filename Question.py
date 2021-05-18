@@ -83,7 +83,7 @@ class Question:
             return
         if re.search(r"How many [-%()a-zA-Z0-9\s\.]* are also [-%()a-zA-Z0-9\s\.]*", question_str):
             self.type = "GENERAL3"
-            self.relation = [question_str.split("How many ")[1].split(" are also")[0],question_str.split(" are also ")[1]]
+            self.relation = [question_str.split("How many ")[1].split(" are also")[0].replace(" ", "_"),question_str.split(" are also ")[1].replace(" ", "_")]
             return
 
         raise ValueError("Couldn't match question")

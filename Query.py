@@ -49,7 +49,7 @@ def query_general(parse_qst,g):
     elif parse_qst.type == "GENERAL3":
         _query = f"select ?x where {'{'}"\
             " "f"?x <{BASIC_URL}occupation> <{BASIC_URL}{parse_qst.relation[0]}> ."\
-            f" ?x <{BASIC_URL}occupation> <{BASIC_URL}{parse_qst.relation[1]}> ."\
+            " "f"?x <{BASIC_URL}occupation> <{BASIC_URL}{parse_qst.relation[1]}> ."\
             "}"
         print(_query)
     else:
