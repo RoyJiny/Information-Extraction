@@ -51,7 +51,6 @@ def query_general(parse_qst,g):
             " "f"?x <{BASIC_URL}Occupation> <{BASIC_URL}{parse_qst.relation[0]}> ."\
             " "f"?x <{BASIC_URL}Occupation> <{BASIC_URL}{parse_qst.relation[1]}> ."\
             "}"
-        print(_query)
     else:
         raise ValueError("Couldn't match question")
     res = list(g.query(_query))
