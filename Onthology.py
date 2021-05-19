@@ -90,7 +90,6 @@ class Onthology:
                     for txt in value:
                         dates += [date for date in re.findall(r"[0-9]*-[0-9]*-[0-9]*", txt)]
                     value = dates # get only dates in the correct format
-
                 relation = Relation(label,value)
                 self.film_onthology[film].append(relation)
                 for entity in value:
@@ -136,7 +135,7 @@ class Onthology:
                                 new_txt.replace("_","",1)
                             new_value_occupation.append(new_txt)
                     value_occupation = new_value_occupation
-            value_occupation = [txt.replace(" ,","").replace(", ","").replace(",","") for txt in value_occupation]
+            value_occupation = [txt.replace(" ,","").replace(", ","").replace(",","").lower() for txt in value_occupation]
             
             if value_bday != [] or value_occupation != []:
                 relation_bday = Relation("Bday",value_bday)
