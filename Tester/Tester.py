@@ -37,18 +37,20 @@ questions = [
 ]
 
 
-def test_all(onthology,colored):
+def test_all(onthology,colored,just_sanity=False):
     if colored: init()
     print("Running Tester\n")
+    if just_sanity: print("[just sanity check]")
     error_count = 0
     
-    q_file = open("./Tester/questions.txt",'r')
-    a_file = open("./Tester/answers.txt",'r')
-    for q_line in q_file:
-        a_line = a_file.readline()
-        questions.append((q_line.replace('\n','').replace('\r',''),a_line.replace('\n','').replace('\r','')))    
-    q_file.close()
-    a_file.close()
+    if not just_sanity:
+        q_file = open("./Tester/questions.txt",'r')
+        a_file = open("./Tester/answers.txt",'r')
+        for q_line in q_file:
+            a_line = a_file.readline()
+            questions.append((q_line.replace('\n','').replace('\r',''),a_line.replace('\n','').replace('\r','')))    
+        q_file.close()
+        a_file.close()
 
     for q in questions:
         try:

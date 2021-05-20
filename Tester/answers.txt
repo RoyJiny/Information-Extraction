@@ -1,6 +1,6 @@
 50
 Chlo%C3%A9 Zhao
-Chlo%C3%A9 Zhao, Dan Janvey, Frances McDormand, Mollye Asher, Peter Spears
+Chloé Zhao, Dan Janvey, Frances McDormand, Mollye Asher, Peter Spears
 Yes
 2020-09-11, 2021-02-19
 108 minutes
@@ -22,7 +22,7 @@ No
 126 minutes
 Algee Smith, Ashton Sanders, Daniel Kaluuya, Darrell Britt-Gibson, Dominique Fishback, Dominique Thorne, Jesse Plemons, Lakeith Stanfield, Lil Rel Howery, Martin Sheen
 Yes
-Yes
+No
 Lee Isaac Chung
 Christina Oh, Dede Gardner, Jeremy Kleiner
 No
@@ -92,11 +92,11 @@ Craig Foster (filmmaker)
 No
 2020-09-04, 2020-09-07
 85 minutes
-Craig Foster (filmmaker), Tom Foster
+Craig Foster, Tom Foster
 Yes
 No
 Anthony Giacchino
-Alice Doyard
+Aaron Matthews, Alice Doyard, Annie Small
 No
 2020-02-16
 24 minutes
@@ -145,7 +145,7 @@ Elizabeth Martin, Jonathan Olson, Julia Kennelly, Marshall Curry
 Yes
 2019-04-26
 20 minutes
-Maria Dizzia
+Greg Keller, Juliana Canfield, Maria Dizzia
 Yes
 No
 Greta Gerwig
@@ -163,7 +163,7 @@ No
 137 minutes
 Adam Driver, Alan Alda, Julie Hagerty, Laura Dern, Merritt Wever, Ray Liotta, Scarlett Johansson
 Yes
-No
+Yes
 Taika Waititi
 Carthew Neal, Chelsea Winstanley, Taika Waititi
 Yes
@@ -260,7 +260,7 @@ Aaron McCusker, Aidan Gillen, Allen Leech, Ben Hardy (actor), Gwilym Lee, Joseph
 Yes
 No
 Alfonso Cuar%C3%B3n
-Alfonso Cuar%C3%B3n, Gabriela Rodr%C3%ADguez, Nicol%C3%A1s Celis (film producer)
+Alfonso Cuarón, Gabriela Rodr%C3%ADguez, Nicol%C3%A1s Celis (film producer)
 No
 2018-08-30, 2018-11-21
 135 minutes
@@ -303,7 +303,7 @@ Spike Lee
 Jason Blum, Jordan Peele, Raymond Mansfield, Sean McKittrick, Shaun Redick, Spike Lee
 Yes
 2018-05-14, 2018-08-10
-128 minutes
+128 minutes, 135 minutes
 Adam Driver, John David Washington, Laura Harrier, Topher Grace
 Yes
 No
@@ -347,11 +347,11 @@ Arunachalam Muruganantham
 Yes
 No
 Guy Nattiv
-Jaime Ray Newman
+Andrew Carlberg, Guy Nattiv, Jaime Ray Newman, Tim Harms
 No
 2018
 20 minutes
-Bashy, Danielle Macdonald, Jackson Robert Scott, Jonathan Tucker
+Bashy, Danielle Macdonald, Jackson Robert Scott, Jonathan Tucker, Lonnie Chavis
 Yes
 No
 Bob Persichetti, Peter Ramsey, Rodney Rothman
@@ -460,7 +460,6 @@ No
 Frank Stiefel
 
 No
-2016-10
 40 minutes
 Mindy Alper
 Yes
@@ -566,7 +565,7 @@ No
 
 No
 Asghar Farhadi
-Alexandre Mallet-Guy
+Alexandre Mallet-Guy, Asghar Farhadi
 No
 2016-05-21, 2016-08-31, 2016-11-02
 125 minutes
@@ -574,7 +573,7 @@ Shahab Hosseini, Taraneh Alidoosti
 Yes
 No
 Krist%C3%B3f De%C3%A1k
-Anna Udvardy, Krist%C3%B3f De%C3%A1k
+Anna Udvardy, Kristóf Deák
 No
 2016-02-28
 25 minutes
@@ -613,7 +612,7 @@ John Slattery, Liev Schreiber, Mark Ruffalo, Michael Keaton, Rachel McAdams, Sta
 Yes
 No
 George Miller (filmmaker)
-Doug Mitchell (film producer), George Miller (filmmaker), PJ Voeten
+Doug Mitchell (film producer), George Miller, PJ Voeten
 No
 2015-05-07, 2015-05-14
 120 minutes
@@ -621,13 +620,13 @@ Abbey Lee, Charlize Theron, Courtney Eaton, Hugh Keays-Byrne, Nicholas Hoult, Ri
 Yes
 No
 Alejandro G. I%C3%B1%C3%A1rritu
-Alejandro G. I%C3%B1%C3%A1rritu, Arnon Milchan, James W. Skotchdopole, Keith Redmon, Mary Parent, Steve Golin
+Alejandro G. Iñárritu, Arnon Milchan, James W. Skotchdopole, Keith Redmon, Mary Parent, Steve Golin
 Yes
 2015-12-16, 2015-12-25
 156 minutes
 Domhnall Gleeson, Leonardo DiCaprio, Tom Hardy, Will Poulter
 Yes
-Yes
+No
 Steven Spielberg
 Kristie Macosko Krieger, Marc Platt (producer), Steven Spielberg
 No
@@ -721,13 +720,13 @@ Yes
 148 minutes
 Andrew Scott (actor), Ben Whishaw, Christoph Waltz, Daniel Craig, Dave Bautista, L%C3%A9a Seydoux, Monica Bellucci, Naomie Harris, Ralph Fiennes
 Yes
-Yes
+No
 Benjamin Cleary
-Serena Armitage
+Serena Armitage, Shan Christopher Ogilvie
 No
 2015
 12 minutes
-Chloe Pirrie, Matthew Needham
+Chloe Pirrie, Eric Richard, Matthew Needham
 Yes
 No
 Alejandro G. I%C3%B1%C3%A1rritu
@@ -866,7 +865,7 @@ Alfre Woodard, Benedict Cumberbatch, Brad Pitt, Chiwetel Ejiofor, Lupita Nyong%2
 Yes
 No
 Alfonso Cuar%C3%B3n
-Alfonso Cuar%C3%B3n, David Heyman
+Alfonso Cuarón, David Heyman
 No
 2013-08-28, 2013-10-04, 2013-11-07
 91 minutes
@@ -914,14 +913,14 @@ Alec Baldwin, Andrew Dice Clay, Bobby Cannavale, Cate Blanchett, Louis C.K., Mic
 Yes
 No
 Alexandre Espigares, Laurent Witz
-ZEILT Productions
+Watt Frame, ZEILT Productions
 No
 2013-10-15
 11 minutes
 
 No
 Malcolm Clarke (film maker)
-Christopher Branch (filmmaker), Nicholas Reed
+Christopher Branch (filmmaker), Malcolm Clarke, Nicholas Reed
 No
 2013
 39 minutes
@@ -933,19 +932,19 @@ Anders Walter
 No
 2014-01-25
 23 minutes
-Casper Crump
+Casper Crump, Marijana Jankovic, Pelle Falk Krusbæk
 Yes
 No
 Paolo Sorrentino
-Nicola Giuliano
+Fabio Conversi, Francesca Cima, Nicola Giuliano
 No
 2013-05-21
-142 minutes, 173 minutes (Director's cut)
+142 minutes, 173 minutes (Director's cut)
 Carlo Buccirosso, Carlo Verdone, Sabrina Ferilli, Toni Servillo
 Yes
 No
 Morgan Neville
-Caitrin Rogers, Gil Friesen
+Caitrin Rogers, Gil Friesen, Michael K. Ross
 No
 2013-01-17, 2013-06-14
 90 minutes
@@ -983,7 +982,7 @@ Yes
 150 minutes
 Daniel Day-Lewis, David Strathairn, Hal Holbrook, James Spader, Joseph Gordon-Levitt, Sally Field, Tommy Lee Jones
 Yes
-Yes
+No
 Quentin Tarantino
 Pilar Savone, Reginald Hudlin, Stacey Sher
 No
@@ -1057,18 +1056,18 @@ Sixto Rodriguez
 Yes
 No
 Andrea Nix Fine, Sean Fine
-Sean Fine
+Andrea Nix, Sean Fine
 No
 2012
 40 minutes
 
 No
 Shawn Christensen
-Andrew Napier, Damon Russell
+Andrew Napier, Damon Russell, Mara Kassin
 No
 
 19 minutes
-F%C3%A1tima Ptacek, Kim Allen (actress)
+F%C3%A1tima Ptacek, Kim Allen (actress), Shawn Christensen
 Yes
 No
 Michel Hazanavicius
@@ -1134,16 +1133,16 @@ No
 123 minutes
 Babak Karimi, Kimiya Hosseini, Leila Hatami, Merila Zarei, Peyman Moaadi, Sareh Bayat, Sarina Farhadi, Shahab Hosseini
 Yes
-Yes
+No
 Brandon Oldenburg, William Joyce (writer)
-Lampton Enochs
+Alissa Kantrow, Lampton Enochs, Trish Farnsworth-Smith
 No
 2011-01-30
 15 minutes
 
 No
 Terry George
-Oorlagh George
+Oorlagh George, Terry George
 No
 2011-06-26
 29 minutes
@@ -1151,7 +1150,7 @@ Ciar%C3%A1n Hinds, Conleth Hill, Kerry Condon, Maggie Cronin
 Yes
 No
 Daniel Lindsay, T. J. Martin
-Daniel Lindsay, Ed Cunningham, Glen Zipper, Seth Gordon
+Daniel Lindsay, Ed Cunningham, Glen Zipper, Rich Middlemas, Seth Gordon
 No
 2011-03-13
 113 minutes
@@ -1182,7 +1181,7 @@ Christopher Plummer, Ewan McGregor, Goran Vi%C5%A1nji%C4%87, M%C3%A9lanie Lauren
 Yes
 No
 Gore Verbinski
-Graham King
+Gore Verbinski, Graham King, John B. Carls
 No
 2011-02-14, 2011-03-04
 107 minutes
@@ -1250,7 +1249,7 @@ Sisse Graum J%C3%B8rgensen
 No
 2010-08-26
 118 minutes
-Mikael Persbrandt, Trine Dyrholm, Ulrich Thomsen
+Markus Rygaard, Mikael Persbrandt, Trine Dyrholm, Ulrich Thomsen, William Jøhnk Juels Nielsen
 Yes
 No
 
@@ -1261,15 +1260,15 @@ No
 
 No
 Luke Matheny
-Ryan Silbert
+Gigi Dement, Ryan Silbert, Stefanie Walmsley, Stephen Dypiangco
 No
 2010-06-12
 18 minutes
-Elizabeth Olin
+Andrea Mustain, Christopher Hirsh, David Ross, Elizabeth Olin, Emily Young, Francesca McLaughlin, Katherine E. Scharhon, Luke Matheny, Marian Brock, Mark Gessner, Miguel Rosales, Priya Dewan
 Yes
 No
 Joe Johnston
-Benicio del Toro, Scott Stuber, Sean Daniel
+Benicio del Toro, Rick Yorn, Scott Stuber, Sean Daniel
 Yes
 2010-01-27, 2010-02-12
 103 minutes
@@ -1284,7 +1283,7 @@ No
 
 No
 Charles H. Ferguson
-Audrey Marrs
+Audrey Marrs, Charles Ferguson
 No
 2010-05-16, 2010-10-08
 108 minutes
@@ -1293,20 +1292,23 @@ No
 1982-03-31
 filmmaker
 0
+
+
+0
+
+
+0
+
+
+0
 1957-06-23
 actress, producer
 2
 1965-11-29
 actor, film director, film producer, screenwriter
 0
-
-
-0
-
-
-0
-1949-01-26
-actor
+1957-06-23
+actress, producer
 2
 
 
@@ -1314,23 +1316,26 @@ actor
 
 
 1
+1949-01-26
+actor
+2
 1979-06-28
 film director, novelist, playwright, screenwriter, theatre director
 0
+
+
+0
+
+
+0
+
+
+0
+
+
+0
 1958-07-08
-producer
-0
-
-
-0
-
-
-0
-
-
-0
-
-
+film producer
 0
 1937-12-31
 actor, composer, director, painter, producer
@@ -1355,6 +1360,9 @@ director, filmmaker, writer
 0
 
 
+0
+1980-03-07
+director, filmmaker, writer
 0
 1986-05-23
 director, filmmaker, screenwriter
@@ -1392,6 +1400,9 @@ activist, actor
 1978-10-19
 film director, producer, screenwriter
 0
+
+
+0
 1967-10-16
 film producer
 0
@@ -1400,18 +1411,15 @@ film producer
 0
 
 
-0
+1
 1983-12-21
-actor, producer
+actor, executive producer
 1
 1984-12-23
 actress, dj
 1
 2012-04-23
 actor
-1
-
-
 1
 1947-06-19
 actress
@@ -1476,14 +1484,14 @@ actor
 1954-09-23
 director, playwright
 0
+
+
+0
 1954-12-28
 actor, director, producer
 1
 1960-02-09
 producer
-0
-
-
 0
 1965-08-11
 actress, producer
@@ -1503,20 +1511,23 @@ actor
 1985-10-01
 actress, film director, producer, writer
 0
+
+
+0
+
+
+0
+
+
+0
+1985-10-01
+actress, film director, producer, writer
+0
 1990-07-02
 actress, producer
 4
-
-
-0
 1990-01-01
 assistant director, film producer
-0
-
-
-0
-
-
 0
 1985-05-28
 actress
@@ -1539,6 +1550,9 @@ activist, actress
 1967-03-06
 actress, producer, singer
 2
+1970-07-30
+filmmaker
+0
 1970-07-30
 filmmaker
 0
@@ -1602,11 +1616,11 @@ activist, actress, director, producer
 1969-05-19
 actor, film director, producer, screenwriter
 0
-1972-05-08
-producer
+
+
 0
-
-
+1972-05-08
+film producer
 0
 1965-11-22
 actor
@@ -1628,10 +1642,19 @@ actor
 0
 
 
+0
+
+
 1
 
 
 1
+
+
+0
+
+
+0
 
 
 0
@@ -1647,11 +1670,14 @@ actor, executive producer, film director, screenwriter
 
 
 0
+
+
+0
 1965
-co-founder of quicken loans, film producer
+co-founder of, film producer, quicken loans
 0
 
-entrepreneur and philanthropist
+and, entrepreneur, philanthropist
 0
 
 
@@ -1662,20 +1688,20 @@ film director, film producer, screenwriter
 
 
 0
+
+
+0
+
+
+0
 1957-10-17
 film producer
 0
 1980-08-05
 activist, actor, director, producer
 0
-
-
-0
 1969-11-04
 actor, entrepreneur, rapper, record executive, record producer, singer, songwriter
-0
-
-
 0
 1982-04-21
 actor, entertainment reporter, model
@@ -1689,14 +1715,17 @@ actor
 1969-09-14
 director, producer, screenwriter
 0
+
+
+0
+1969-09-14
+director, producer, screenwriter
+0
+
+
+0
 1968-10-23
 film producer
-0
-
-
-0
-
-
 0
 1967-02-25
 actor
@@ -1705,7 +1734,7 @@ actor
 actor
 1
 1981-02-10
-actress
+actor
 1
 1990-03-26
 actor
@@ -1719,6 +1748,9 @@ actress
 1975-09-05
 actress
 1
+1963-12-16
+film director, screenwriter
+0
 1963-12-16
 film director, screenwriter
 0
@@ -1740,8 +1772,8 @@ actor
 1969
 cinematographer, director, editor, producer
 0
-
-
+1969
+cinematographer, director, editor, producer
 0
 
 
@@ -1749,6 +1781,15 @@ cinematographer, director, editor, producer
 
 
 0
+
+
+0
+
+
+1
+
+
+1
 1974-12-29
 actress
 1
@@ -1803,8 +1844,11 @@ actor
 1969-09-03
 film maker
 0
+1969-09-03
+film maker
+0
 1961-07-26
-founder of, producer
+founder of, heyday films, producer
 0
 1984-11-22
 actress, singer
@@ -1830,12 +1874,18 @@ actress
 1975-08-16
 actor, comedian, director, producer, writer
 1
+1975-08-16
+actor, comedian, director, producer, writer
+1
 
 
 0
 1975
 film producer
 0
+1975-08-16
+actor, comedian, director, producer, writer
+1
 2007-03-05
 actor
 1
@@ -1866,6 +1916,9 @@ animator, director, screenwriter, storyboard artist, voice actor
 1971-05-02
 film producer
 0
+
+
+1
 1956-07-09
 actor, filmmaker
 3
@@ -1883,9 +1936,6 @@ actor, comedian, producer, writer
 1
 1979-02-21
 actor, comedian, filmmaker
-1
-
-
 1
 1975-05-03
 actress, model
@@ -1905,6 +1955,9 @@ actress
 1962-10-11
 actress, comedian
 2
+1970-12-20
+actor, film director, film producer, screenwriter
+0
 1970-12-20
 actor, film director, film producer, screenwriter
 0
@@ -1929,8 +1982,11 @@ actress
 1963-03-27
 actor, film director, film producer, screenwriter
 0
+1963-03-27
+actor, film director, film producer, screenwriter
+0
 1961-07-26
-founder of, producer
+founder of, heyday films, producer
 0
 
 film producer
@@ -1968,8 +2024,8 @@ actor, filmmaker
 1965-08-01
 director, producer, screenwriter
 0
-
-
+1965-08-01
+director, producer, screenwriter
 0
 
 
@@ -1980,6 +2036,12 @@ director, producer, screenwriter
 
 
 0
+
+
+0
+
+
+1
 1992-03-13
 actor
 1
@@ -1995,9 +2057,6 @@ actor
 1986-06-18
 actor
 2
-
-
-1
 1960-09-10
 actor
 2
@@ -2031,6 +2090,12 @@ filmmaker
 
 
 0
+1957-06-14
+filmmaker
+0
+
+
+0
 
 
 0
@@ -2038,22 +2103,22 @@ filmmaker
 
 0
 
-film, screenwriter, television producer
+
 0
 
 
+0
+
+film producer, screenwriter, television producer
 0
 1975-08-07
 actress, producer
 2
-
-
-0
-
-
-0
+1975-08-07
+actress, producer
+2
 1967-06-20
-actress, producer, singer
+actress, model, producer, singer
 1
 1945-10-19
 actor, author, musician, poet, singer
@@ -2079,17 +2144,17 @@ actor, director, writer
 
 
 0
+
+
+0
 1962-10-25
 director, filmmaker, producer
-0
-
-
 0
 1971-03-07
 director, producer, screenwriter
 0
 1989-11-10
-actor, singer
+actor
 1
 1986-03-14
 actor, dancer
@@ -2112,11 +2177,11 @@ documentary filmmaker
 
 
 0
-1981-12-14
-american football player, film director, producer, writer
+
+
 0
-
-
+1981-12-14
+american football, film director, producer, writer
 0
 1961-09-06
 animator, film director, producer
@@ -2126,6 +2191,9 @@ animator, film director, producer
 0
 
 
+0
+1981-12-14
+american football, film director, producer, writer
 0
 
 
@@ -2144,6 +2212,9 @@ filmmaker
 0
 
 
+0
+1956-12-17
+filmmaker
 0
 
 
@@ -2208,6 +2279,9 @@ cinematographer, director, film editor, producer, screenwriter
 
 
 0
+
+
+0
 1986-10-15
 producer
 0
@@ -2215,7 +2289,7 @@ producer
 actress
 1
 1974-11-21
-actress
+actor
 1
 1986-05-23
 director, filmmaker, screenwriter
@@ -2265,6 +2339,9 @@ filmmaker, photographer, theatre director
 
 
 0
+1973-09-23
+filmmaker, photographer, theatre director
+0
 
 
 0
@@ -2280,6 +2357,12 @@ actress
 1975-01-05
 actor, filmmaker
 3
+1975-01-05
+actor, filmmaker
+3
+
+
+0
 
 film producer
 0
@@ -2289,9 +2372,9 @@ film producer
 1970-12-20
 actor, film director, film producer, screenwriter
 0
-
-
-0
+1975-01-05
+actor, filmmaker
+3
 1986-03-28
 actress, singer, songwriter
 1
@@ -2307,6 +2390,12 @@ actor
 1968-04-17
 comedian, film director, film producer, screenwriter
 0
+
+
+0
+1968-04-17
+comedian, film director, film producer, screenwriter
+0
 1963-12-18
 actor, film producer
 3
@@ -2316,11 +2405,8 @@ film producer
 1976
 film producer
 0
-
-
-0
 1967-07-16
-actor, comedian, producer, writer
+actor, comedian, film producer, writer
 0
 1974-01-30
 actor
@@ -2349,11 +2435,17 @@ actor
 1957-03-20
 actor, director, producer, professor, writer
 0
-1969-02-20
-producer
+1957-03-20
+actor, director, producer, professor, writer
 0
 
 
+0
+
+
+0
+1969-02-20
+producer
 0
 1975-03-20
 producer
@@ -2361,9 +2453,6 @@ producer
 1979-02-21
 actor, comedian, filmmaker
 1
-
-
-0
 1984-07-28
 actor, producer
 2
@@ -2380,14 +2469,20 @@ actor
 director, producer, writer
 0
 
+
+0
+
+
+0
+1985-01-19
+director, producer, writer
+0
+
 film, television producer
 0
 
 
-0
-
-
-0
+1
 1980-11-12
 actor, musician
 4
@@ -2409,17 +2504,17 @@ actor
 1953-02-09
 actor
 2
+1979-11-19
+film director, producer, screenwriter
+0
 
 
-1
+0
 1979-11-19
 film director, producer, screenwriter
 0
 1982-11-10
 film producer
-0
-
-
 0
 1967-10-16
 film producer
@@ -2472,21 +2567,33 @@ director, producer
 1973-10-12
 and photographer, climber, film director
 1
-
-
+1977
+director, producer
 0
-
-
-0
-1985-08-17
-rock climber
+1973-10-12
+and photographer, climber, film director
 1
 
 
+0
+
+
+0
+
+
+1
+1973-10-12
+and photographer, climber, film director
+1
+1985-08-17
+rock climber
 1
 1978-08-11
 rock climber
 1
+
+
+0
 
 
 0
@@ -2508,9 +2615,21 @@ inventor and social entrepreneur
 1973-05-24
 film director, film producer, screenwriter
 0
+1973-05-24
+film director, film producer, screenwriter
+0
+
+
+0
+
+
+0
 1978-04-02
 actress, producer, singer
 0
+
+
+1
 1991-05-19
 actress
 1
@@ -2532,20 +2651,20 @@ film director, film producer, illustrator, story artist, storyboard artist
 
 author, film director, producer, screenwriter, television writer
 0
+
+
+0
 1948-04-18
-businessman, film producer
+businessperson, film producer
 0
 1958-03-25
 business executive, film producer
 0
 1975-07-12, 1975-09-23
-actors, animators, filmmakers
+actor, animator, filmmakers
 0
 1975-07-12, 1975-09-23
-actors, animators, filmmakers
-0
-
-
+actor, animator, filmmakers
 0
 1995-05-04
 actor, rapper, singer
@@ -2583,6 +2702,9 @@ actor, director, producer, screenwriter
 1964-10-09
 actor, author, filmmaker
 0
+1964-10-09
+actor, author, filmmaker
+0
 1961
 director, producer
 0
@@ -2604,6 +2726,9 @@ actor
 1970-05-25
 actress, author, producer
 3
+1970-07-30
+filmmaker
+0
 1970-07-30
 filmmaker
 0
@@ -2646,6 +2771,9 @@ actor, model, producer
 1970-03-26
 film director, playwright, screenwriter
 0
+1970-03-26
+film director, playwright, screenwriter
+0
 
 
 0
@@ -2670,7 +2798,7 @@ actor
 1969-06-11
 actor, producer
 1
-1972-09-25
+1972-08-25
 film director
 0
 1957-12-20
@@ -2740,7 +2868,7 @@ actress, director
 actress
 1
 1985-01-02
-actress
+actor
 1
 1965-10-11
 actor, playwright, screenwriter
@@ -2752,7 +2880,7 @@ actor, bodybuilder, mixed martial artist, professional wrestler
 actor, director, singer, songwriter
 3
 1967-08-08
-animator, editor, film director, screenwriter
+animator, film director, film editor, screenwriter
 0
 1968-10-22
 film producer
@@ -2781,6 +2909,9 @@ activist, actor, director, producer
 1970-06-26
 director, producer, writer
 0
+1970-06-26
+director, producer, writer
+0
 1963
 film producer
 0
@@ -2802,14 +2933,17 @@ actress
 1971-08-10
 filmmaker
 0
+1971-08-10
+filmmaker
+0
+
+
+0
 1965-11-29
 actor, film director, film producer, screenwriter
 0
 
 producer, screenwriter
-0
-
-
 0
 
 cinematographer, editor, producer
@@ -2837,6 +2971,9 @@ actress
 1
 1988
 actress
+1
+1979-02-21
+actor, comedian, filmmaker
 1
 1979-02-21
 actor, comedian, filmmaker
@@ -2872,10 +3009,13 @@ actor, rapper
 actress
 1
 1967-09-01
-
+commercial director, film director, television director
 0
 1990-01-01
 assistant director, film producer
+0
+
+
 0
 1990-07-02
 actress, producer
@@ -2883,9 +3023,9 @@ actress, producer
 
 
 0
-
-
-0
+1990-07-02
+actress, producer
+4
 1982-08-13
 actor
 1
@@ -2899,7 +3039,7 @@ actor
 actress
 3
 1954-04-13
-author, illustrator
+animator, author, cartoonist, illustrator
 0
 
 
@@ -2929,13 +3069,16 @@ actor, director, editor, photographer, producer, screenwriter
 
 0
 
+
+0
+
+
+0
+
+
+0
+
 director, producer, writer
-0
-
-
-0
-
-
 0
 1989-05-05
 actor, director, producer and writer
@@ -2952,17 +3095,17 @@ producer
 1971-05-05
 actress, film producer
 0
+
+
+1
+
+
+1
+
+
+1
 1987-12-21
 activist, actress, screenwriter
-1
-
-
-1
-
-
-1
-
-
 1
 1963-08-15
 film director, film producer, screenwriter
@@ -3013,7 +3156,7 @@ film producer
 film producer
 0
 1965
-co-founder of quicken loans, film producer
+co-founder of, film producer, quicken loans
 0
 1957-04-14
 film, television and theatre producer
@@ -3033,6 +3176,9 @@ actress
 1956-01-03
 actor, director, producer, screenwriter
 0
+
+
+0
 1950-05-12
 film producer
 0
@@ -3041,9 +3187,6 @@ film producer
 0
 
 film producer
-0
-
-
 0
 
 
@@ -3073,10 +3216,10 @@ actor
 actress, director
 1
 1970-03-28
-actor, comedian, producer, screenwriter
+actor, comedian, film producer, screenwriter
 1
 1962-10-16
-film director, playwright, screenwriter
+film director, playwright, screenwriting
 0
 1970-10-08
 actor, producer, screenwriter
@@ -3138,12 +3281,18 @@ actor
 1954-12-28
 actor, director, producer
 1
+1954-12-28
+actor, director, producer
+1
 1960-02-09
 producer
 0
 1958-07-14
 producer
 0
+1954-12-28
+actor, director, producer
+1
 1965-08-11
 actress, producer
 4
@@ -3166,7 +3315,7 @@ actress
 filmmaker
 0
 1961-07-26
-founder of, producer
+founder of, heyday films, producer
 0
 1965-07-31
 author, film producer, philanthropist, screenwriter, television producer
@@ -3210,9 +3359,15 @@ actor
 1966-10-19
 actor, director, producer, screenwriter
 0
+1966-10-19
+actor, director, producer, screenwriter
+0
 1967
 producer
 0
+
+
+1
 1950-09-21
 actor, comedian, writer
 2
@@ -3234,9 +3389,9 @@ actor
 1943-03-31
 actor, comedian
 1
-
-
-1
+1974-08-06
+television director, television producer
+0
 1974-08-06
 television director, television producer
 0
@@ -3273,14 +3428,20 @@ film director, film producer, screenwriter
 
 
 0
+1972-05-07
+film director, film producer, screenwriter
+0
 1974-02-03
-actor, film director, producer, singer, speaker
+actor, film director, film producer, singer, speaker
 2
 1984-01-12
 actress, translator
 1
 1982-06-07
 film director
+0
+
+
 0
 
 
@@ -3349,7 +3510,7 @@ actress, model, singer
 
 0
 1968-12-26
-animator, director, producer, screenwriter, voice actor
+animator, film director, film producer, screenwriter, voice actor
 0
 1963-05-10
 animation director, screenwriter, voice actor
@@ -3435,6 +3596,9 @@ director, physician, producer, writer
 
 
 0
+
+
+0
 1977-09-15
 actor, model, producer
 4
@@ -3448,7 +3612,7 @@ actor
 actor, film director
 1
 1987-04-18
-actress, businesswoman[1], fashion designer, model
+actress, businesswoman, fashion designer, model
 1
 1989-05-29
 actress
@@ -3464,6 +3628,9 @@ actress, model
 1
 1963-08-15
 film director, film producer, screenwriter
+0
+
+
 0
 1944-12-06
 businessman, film producer
@@ -3492,6 +3659,9 @@ actor, director, screenwriter
 1993-01-28
 actor
 1
+1946-12-18
+director, producer, screenwriter
+0
 1946-12-18
 director, producer, screenwriter
 0
@@ -3528,6 +3698,9 @@ film producer
 1944-12-06
 businessman, film producer
 0
+1963-12-18
+actor, film producer
+3
 1974-01-30
 actor
 4
@@ -3540,14 +3713,17 @@ actor, musician
 1972-10-05
 director, producer, writer
 0
+
+
+0
+1972-10-05
+director, producer, writer
+0
 1957-12-20
 film producer
 0
 1959-10-10
 film producer
-0
-
-
 0
 1945-10-02
 film producer
@@ -3639,11 +3815,11 @@ actor, dancer, producer
 1970-05-26
 director, novelist, screenwriter
 0
+
+
+0
 1966
 film producer
-0
-
-
 0
 1983-05-12
 actor, director, screenwriter
@@ -3660,6 +3836,9 @@ animator, director, producer, voice actor, writer
 1971-05-02
 film producer
 0
+
+
+1
 1971-09-16
 actress, comedian, director, producer, writer
 1
@@ -3678,9 +3857,6 @@ actor, comedian, director, producer, writer
 1979-06-24
 actress, comedian, director, producer, writer
 1
-
-
-1
 1965-01-22
 actress, producer
 1
@@ -3691,13 +3867,13 @@ actor
 filmmaker
 0
 
+
+0
+
+
+0
+
 film producer
-0
-
-
-0
-
-
 0
 1983-09-14
 singer, songwriter
@@ -3706,7 +3882,7 @@ singer, songwriter
 animator, film director, writer
 0
 1982-05-28
-animator, film editor, film producer
+animator, film editing, film producer
 0
 1978-11-12
 filmmaker, journalist
@@ -3774,6 +3950,12 @@ actor, director, producer
 
 
 0
+
+
+0
+
+
+1
 1984-04-13
 actor
 1
@@ -3817,7 +3999,10 @@ actress
 actress, film producer
 1
 1969-05-01
-director, producer, writer
+film director, film producer, writer
+0
+1969-05-01
+film director, film producer, writer
 0
 1958-07-14
 producer
@@ -3826,7 +4011,7 @@ producer
 businessman, film producer
 0
 
-visual effects artist and film producer
+and film producer, special effect
 0
 1962-12-22
 actor, director, producer
@@ -3838,7 +4023,7 @@ actor
 actor, director, producer, screenwriter
 1
 1973-04-14
-actor, producer
+actor, film producer
 2
 1955-07-22
 actor
@@ -3936,6 +4121,9 @@ actor
 1930-05-31
 actor, film director, producer
 0
+1930-05-31
+actor, film director, producer
+0
 
 
 0
@@ -3948,11 +4136,17 @@ actor, filmmaker
 
 
 0
+1975-01-05
+actor, filmmaker
+3
 1981-12-28
 actress
 1
 1960-07-30
-director, producer, writer
+film director, film producer, screenwriter
+0
+1960-07-30
+film director, film producer, screenwriter
 0
 
 
@@ -3978,6 +4172,9 @@ actor, director, writer
 1970-07-30
 filmmaker
 0
+1970-07-30
+filmmaker
+0
 1971-12-09
 film producer
 0
@@ -3985,7 +4182,7 @@ film producer
 author, film producer
 0
 1969-11-04
-actor, college professor, producer
+actor, producer
 2
 1982-11-12
 actress
@@ -4074,6 +4271,9 @@ film producer
 1976
 film producer
 0
+1954-01-29
+actress, author, media executive, producer, tv host
+1
 1976-04-01
 actor, producer
 1
@@ -4098,8 +4298,11 @@ actor, film director
 1964-02-02
 director, producer
 0
+1964-02-02
+director, producer
+0
 1972-03-11
-director, film editor
+film director, film editor
 0
 1965-02-02
 film producer
@@ -4108,7 +4311,7 @@ film producer
 computer security consultant
 1
 1967-03-06
-attorney, author, journalist
+attorney at law, author, journalism
 1
 1943
 cryptanalyst-mathematician
@@ -4123,7 +4326,7 @@ journalist
 film director, voice actor, writer
 0
 1968-12-19
-animator, film director, screenwriter, voice actor
+animator, film director, screenwriter, voice acting
 0
 
 producer, voice actor
@@ -4176,13 +4379,13 @@ director, writer
 1966-03-04
 director, writer
 0
+
+
+0
+
+
+0
 1980-10-01
-
-0
-
-
-0
-
 
 0
 1960-12-03
@@ -4269,8 +4472,11 @@ actress, producer
 1961-11-28
 cinematographer, director, film editor, producer, screenwriter
 0
+
+
+0
 1961-07-26
-founder of, producer
+founder of, heyday films, producer
 0
 1964-07-26
 actress, producer
@@ -4288,7 +4494,7 @@ editor, film director, producer
 film producer
 0
 1969-11-04
-actor, college professor, producer
+actor, producer
 2
 1972-04-17
 actress
@@ -4320,6 +4526,9 @@ actor, and comedian, singer
 1982-03-21
 actor, singer
 1
+1962-09-17
+actor, film director, producer, screenwriter
+0
 1962-09-17
 actor, film director, producer, screenwriter
 0
@@ -4356,6 +4565,9 @@ actor
 1969-10-22
 actor, filmmaker, musician, photographer
 0
+1969-10-22
+actor, filmmaker, musician, photographer
+0
 1986-01-31
 film producer
 0
@@ -4380,14 +4592,14 @@ actress, singer
 1935-12-01
 actor, comedian, film director, writer
 0
+
+
+0
 1943-11-30
 film producer
 0
 
 film producer
-0
-
-
 0
 1958-04-03
 activist, actor, comedian, film producer, writer
@@ -4425,6 +4637,12 @@ actor
 
 
 0
+
+
+0
+
+
+0
 1963-06-18
 film producer
 0
@@ -4437,11 +4655,23 @@ film producer
 1978-02-05
 director, producer
 0
+
+
+0
+
+
+1
 1977-07-11
 actor
 1
 1970-05-31
 film director, screenwriter
+0
+
+
+0
+
+
 0
 
 
@@ -4460,6 +4690,9 @@ actor, playwright, theatre director
 1
 1967-10-10
 director and writer, film producer
+0
+
+
 0
 
 
@@ -4488,12 +4721,18 @@ film producer
 1972-08-15
 actor, director, producer, screenwriter
 1
+1972-08-15
+actor, director, producer, screenwriter
+1
 1961-05-06
 actor, director, producer, writer
 2
 1963-05-15
-actor, director, producer, screenwriter
+actor, film director, film producer, screenwriter
 0
+1972-08-15
+actor, director, producer, screenwriter
+1
 1956-03-07
 actor, director, producer, screenwriter
 1
@@ -4508,6 +4747,9 @@ director, producer, writer
 0
 
 
+0
+1954-10-23
+director, producer, writer
 0
 
 film producer
@@ -4549,7 +4791,7 @@ producer
 actor, producer, singer
 1
 1964-04-07
-actor, film producer, musician
+actor, filmmaker, musician
 1
 1982-11-12
 actress
@@ -4566,6 +4808,9 @@ actress
 1971-10-13
 
 2
+1946-12-18
+director, producer, screenwriter
+0
 1946-12-18
 director, producer, screenwriter
 0
@@ -4669,13 +4914,13 @@ actress
 film director, producer, screenwriter
 0
 
-producer
+
+0
+
+film producer
 0
 1961-09-23
 producer
-0
-
-
 0
 1975-01-05
 actor, filmmaker
@@ -4695,6 +4940,9 @@ actor, director, producer, teacher
 1971-08-31
 
 1
+1951-11-27
+director, producer, writer
+0
 1951-11-27
 director, producer, writer
 0
@@ -4737,7 +4985,7 @@ actress, artist, chanteuse, photographer, poet
 1953-03-16
 actress
 1
-1972-09-25
+1972-08-25
 film director
 0
 1957-12-20
@@ -4785,6 +5033,9 @@ animator, director
 
 film producer
 0
+1967
+animator, director
+1
 1977-07-13
 voice actress
 1
@@ -4821,6 +5072,9 @@ actor, director, singer
 1977-09-14
 actor, film director, journalist, screenwriter
 0
+1977-09-14
+actor, film director, journalist, screenwriter
+0
 
 film producer
 0
@@ -4834,7 +5088,16 @@ cinematographer, filmmaker
 filmmaker
 0
 
+cinematographer, filmmaker
+0
+
+
+0
+
 actor, film director, painter, screenwriter, singer-songwriter
+1
+
+
 0
 
 
@@ -4842,11 +5105,14 @@ actor, film director, painter, screenwriter, singer-songwriter
 
 film producer
 0
+
+actor, film director, painter, screenwriter, singer-songwriter
+1
 2000-08-20
 model
 1
 1982-02-22
-film, television actress
+actress, film, television
 1
 1967-03-29
 film director
@@ -4864,7 +5130,7 @@ actor, comedian, television director
 actor
 2
 1964-01-13
-actress
+actor
 1
 1943-06-13
 actor
@@ -4887,6 +5153,9 @@ actor, comedian, restaurateur
 1952-06-20
 actor
 2
+1942-11-17
+actor, film director, film producer, screenwriter
+0
 1942-11-17
 actor, film director, film producer, screenwriter
 0
@@ -4939,7 +5208,7 @@ actress
 actor
 1
 1946-05-06
-actress
+actor
 1
 1956
 
@@ -4965,7 +5234,7 @@ actor
 1943-06-07
 actor, director, writer
 1
-1987-08-23
+1987-08-20
 actress
 1
 1963
@@ -4986,11 +5255,14 @@ actor
 1961-02-10
 film director, screenwriter
 0
+1961-02-10
+film director, screenwriter
+0
 
 
 0
 1962
-producer, screenwriter
+film producer, screenwriter
 0
 1961-05-06
 actor, director, producer, writer
@@ -5007,11 +5279,11 @@ actress, comedian, director, singer
 1962-08-28
 film director
 0
+
+
+0
 1958-07-14
 producer
-0
-
-
 0
 
 
@@ -5046,20 +5318,20 @@ actress
 1935-12-01
 actor, comedian, film director, writer
 0
+
+
+0
 1943-11-30
 film producer
 0
 
 film producer
 0
-
-
-0
 1948-06-28
 actress, director
 1
 1973-04-14
-actor, producer
+actor, film producer
 2
 1967-12-23
 actress, model, singer-songwriter
@@ -5109,6 +5381,9 @@ actress
 1972-05-07
 film director, film producer, screenwriter
 0
+1972-05-07
+film director, film producer, screenwriter
+0
 1972-10-01
 
 1
@@ -5116,7 +5391,7 @@ film director, film producer, screenwriter
 actor, director, screenwriter
 1
 1974-02-03
-actor, film director, producer, singer, speaker
+actor, film director, film producer, singer, speaker
 2
 
 iranian actress
@@ -5142,6 +5417,15 @@ author, filmmaker, illustrator
 
 
 0
+
+
+0
+
+
+0
+1952-12-20
+film director, screenwriter
+0
 1952-12-20
 film director, screenwriter
 0
@@ -5166,6 +5450,9 @@ actress
 1979-09-07
 commercial director, film director, film editor, television director
 0
+
+
+0
 1974-02-25
 producer, writer
 0
@@ -5187,8 +5474,8 @@ film and television producer
 1973-02-20
 film and television producer
 0
-1980-01-18
-actor, producer, screenwriter
+
+
 1
 1974-08-20
 actress, film producer
@@ -5205,6 +5492,9 @@ filmmaker, journalist
 
 film director
 0
+1978-11-12
+filmmaker, journalist
+0
 1961-09-29
 filmmaker
 0
@@ -5220,14 +5510,14 @@ designer, director, writer
 
 
 0
+
+
+0
 1968-08-20
 actress, director, producer
 0
 
 producer
-0
-
-
 0
 1971-03-31
 actor
@@ -5243,6 +5533,12 @@ actor
 1
 1964-03-16
 film director, musician, producer, screenwriter
+0
+1964-03-16
+film director, musician, producer, screenwriter
+0
+
+
 0
 
 
@@ -5313,6 +5609,9 @@ actor
 1970-07-30
 filmmaker
 0
+1970-07-30
+filmmaker
+0
 1971-12-09
 film producer
 0
@@ -5379,6 +5678,9 @@ film director, producer, screenwriter
 
 
 0
+
+
+0
 1952-09-19
 film and television producer
 0
@@ -5386,11 +5688,11 @@ film and television producer
 film and television producer
 0
 1974-12-04
-financier, former ceo of relativity media, president of warner bros. pictures
+financier, former ceo of, relativity media
 0
-
-
-0
+1971-06-05
+actor, businessman, television producer
+1
 1971-06-05
 actor, businessman, television producer
 1
@@ -5404,7 +5706,7 @@ actress, film producer
 actress
 1
 1967-08-08
-animator, editor, film director, screenwriter
+animator, film director, film editor, screenwriter
 0
 1968-10-22
 film producer
@@ -5421,7 +5723,7 @@ actress, comedian
 1926-05-08
 
 1
-1943-11-12
+1942-11-12
 actor, comedian, essayist, playwright, voice artist
 1
 1947-04-06
@@ -5449,7 +5751,7 @@ artist, film director, producer, writer
 film producer
 0
 
-chairman of 20th century fox (1989–1993) and walt disney studios (1994–2000), film director
+20th century fox, chairman of, film director, walt disney studios (division)
 0
 1965-06-01
 producer
@@ -5490,20 +5792,20 @@ actor, occasional presenter
 1969-02-12
 filmmaker
 0
+
+
+0
+
+
+0
 1941-01-21
 business executive, film producer
 0
 
 
 0
-
-
-0
-
-
-0
 1981-06-09
-actress, director, producer
+actress, film director
 1
 1966-11-23
 actor, director
@@ -5521,7 +5823,13 @@ actress
 director, producer, writer
 0
 1972-05-08
-producer
+film producer
+0
+
+
+1
+
+
 0
 1963-09-25
 actor
@@ -5534,15 +5842,60 @@ actor, filmmaker
 1
 1976-12-23
 actor and screenwriter, film director
+1
+
+
+0
+
+
+0
+
+
 0
 
 and director, film producer, writer
 0
+1976-12-23
+actor and screenwriter, film director
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
+
+
+1
 
 actress
 1
 1950-05-13
 art director, effects artist, film director, film producer
+0
+
+
 0
 1968-12-13
 film producer, netflix executive
@@ -5553,6 +5906,9 @@ actor, producer
 1951-08-15
 film executive, film producer
 0
+1967-02-19
+actor, producer
+1
 1937-12-31
 actor, composer, director, painter, producer
 2
@@ -5571,45 +5927,48 @@ film producer and director
 1955-03-24
 entrepreneur, film director, film producer, writer
 0
+
+
+0
 1970-06-25
 ceo, film producer, musician
 0
 6
 3
-16
+17
 3
 0
 0
 1
 1
 1
-29
+28
 0
 4
-1
+2
 5
 0
 2
 0
-80
-40
-20
+73
+35
+19
 0
 0
 2
 1
-43
-22
-14
+42
+23
+18
 1
 10
 4
-45
-20
+47
+26
 4
-6
+5
 1
-20
+25
 1
 3
 1

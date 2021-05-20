@@ -89,6 +89,8 @@ class Onthology:
                     dates = []
                     for txt in value:
                         dates += [date for date in re.findall(r"[0-9]*-[0-9]*-[0-9]*", txt)]
+                    if dates == []:
+                        dates += [date for date in re.findall(r"20[0-9]{2}", txt)]
                     value = dates # get only dates in the correct format
                 relation = Relation(label,value)
                 self.film_onthology[film].append(relation)

@@ -59,8 +59,10 @@ if __name__ == "__main__":
         print(query(parse_qst,g))
     elif sys.argv[1] == "test":
         g = load_onthology()
-        if len(sys.argv) > 2 and sys.argv[2] == "--colored": test_all(g,True)
-        else: test_all(g,False)
+        color = False
+        if len(sys.argv) > 2 and sys.argv[2] == "--colored": color = True
+        if len(sys.argv) > 3 and sys.argv[3] == "--sanity": test_all(g,color,True)
+        else: test_all(g,color)
     else:
         print(usage)
         exit(1)

@@ -15,7 +15,7 @@ entity_question_bank = [
     (
         r"Is .* based on a book",
         "Based_on",
-        lambda q_str: [q_str.split("Is ")[1].split(" based on")[0]]
+        lambda q_str: [q_str[3:].split(" based on")[0]]
     ),
     (
         r"When was .* released",
@@ -61,6 +61,7 @@ class Question:
         self.relation = None
         self.question = question_str
         question_str = question_str.replace('?','')
+        question_str = question_str.replace(':','')
 
         for question in entity_question_bank:
             if re.search(question[0], question_str):

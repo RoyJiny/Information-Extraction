@@ -1,5 +1,3 @@
-import re
-
 BASIC_URL = "https://en.wikipedia.org/wiki/"
 
 def query_entity(parse_qst,g):
@@ -14,7 +12,7 @@ def query_entity(parse_qst,g):
     for ret in list(g.query(_query)):
         res.append(ret)
     if (parse_qst.relation == "Based_on"):
-        if len(res):
+        if len(res) > 0:
             return "Yes"
         else:
             return "No"
