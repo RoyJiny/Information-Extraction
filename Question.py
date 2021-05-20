@@ -54,12 +54,14 @@ entity_question_bank = [
     )
 ]
 
+filter_regex = re.compile('[^a-zA-Z0-9\-_\.!?$,\\/() %]') # remove weird characters that rdf won't accept as a url
+
 class Question:
     def __init__(self, question_str):
         self.type = None
         self.entity = None
         self.relation = None
-        self.question = question_str
+        self.question = filter_regex.sub('',question_str)
         question_str = question_str.replace('?','')
         question_str = question_str.replace(':','')
 
