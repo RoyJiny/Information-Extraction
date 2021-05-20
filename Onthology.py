@@ -137,7 +137,18 @@ class Onthology:
                                 new_txt.replace("_","",1)
                             new_value_occupation.append(new_txt)
                     value_occupation = new_value_occupation
-            value_occupation = [txt.replace(" ,","").replace(", ","").replace(",","").lower() for txt in value_occupation]
+            new_value_occupation = []
+            for value in value_occupation:
+                if ',' in value:
+                    for text in re.split(', |,',value):
+                        if text != "\n" and text != "" and text != " ":
+                            new_txt = text.replace(" ","_")
+                            if new_txt.startswith("_"):
+                                new_txt.replace("_","",1)
+                            new_value_occupation.append(new_txt)
+                else:
+                    new_value_occupation.append(value)
+            value_occupation = [txt.replace(" ,","").replace(", ","").replace(",","").lower() for txt in new_value_occupation]
             
             if value_bday != [] or value_occupation != []:
                 relation_bday = Relation("Bday",value_bday)
