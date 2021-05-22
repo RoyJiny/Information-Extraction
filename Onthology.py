@@ -70,11 +70,11 @@ class Onthology:
                 if label not in ["Directed by","Produced by","Based on", "Release date", "Running time", "Starring", "Bday", "Occupation", "Language"]:
                     continue
                 value = tablerow.xpath("../td/a/*//text()") + tablerow.xpath("../td/text()") + tablerow.xpath("../td/i//text()") + tablerow.xpath("../td/span//text()")
-                value += [text.replace("/wiki/","") for text in tablerow.xpath("../td/a/@href") if not "#" in text]
+                value += [text.replace("/wiki/","") for text in tablerow.xpath("../td/a/@href") if (not "#" in text and not " (p.g.a.)" in text)]
                 is_under_list = False
                 for list_element in tablerow.xpath("../td//div/ul/li")+tablerow.xpath("../td/ul/li"):
                     added_val = ",".join([text for text in list_element.xpath(".//*[not(self::a)]/text()")+list_element.xpath("./text()") if not re.search(r"\[[0-9]*\]", text)]) # remove [1],[2]... fields
-                    added_val += ",".join([text.replace("/wiki/","") for text in list_element.xpath(".//a/@href") if not "#" in text])
+                    added_val += ",".join([text.replace("/wiki/","") for text in list_element.xpath(".//a/@href") if (not "#" in text and not " (p.g.a.)" in text)])
                     value.append(added_val)
                     is_under_list = True
                 if not is_under_list:
@@ -126,7 +126,7 @@ class Onthology:
                 new_value_bday = [re.search(r"19[0-9]{2}",txt).group(0) for txt in new_value_bday] # just year
             value_bday = new_value_bday
 
-            value_occupation = [txt for txt in doc.xpath("//th[text()='Occupation']/../td//text()") if (txt != '' and txt != ',' and txt != ', ' and txt != '\n')]
+            value_occupation = [txt for txt in doc.xpath("//th[text()='Occupation']/../td//*[not(self::style)]//text()")+doc.xpath("//th[text()='Occupation']/../td/text()") if (txt != '' and txt != ',' and txt != ', ' and txt != '\n')]
             if value_occupation != []:
                 if len(value_occupation) == 1:
                     new_value_occupation = []
@@ -148,7 +148,7 @@ class Onthology:
                             new_value_occupation.append(new_txt)
                 else:
                     new_value_occupation.append(value)
-            value_occupation = [txt.replace(" ,","").replace(", ","").replace(",","").lower() for txt in new_value_occupation]
+            value_occupation = [txt.replace(" , ","").replace(" ,","").replace(", ","").replace(",","").lower() for txt in new_value_occupation]
             
             if value_bday != [] or value_occupation != []:
                 relation_bday = Relation("Bday",value_bday)
@@ -162,10 +162,11 @@ class Onthology:
         for film in self.film_onthology.keys():
             for relation in self.film_onthology[film]:
                 label = relation.relation_type
+                filtered_film = filter_regex.sub('',film).strip()
+                filtered_label = filter_regex.sub('',label).strip()
                 for entity in relation.to:
-                    filtered_film = filter_regex.sub('',film)
-                    filtered_label = filter_regex.sub('',label)
-                    filtered_entity = filter_regex.sub('',entity)
+                    filtered_entity = filter_regex.sub('',entity).strip()
+                    if filtered_entity == '': continue
                     e1 = rdflib.URIRef(f'{BASIC_URL}{filtered_film.replace(" ","_")}')
                     r = rdflib.URIRef(f'{BASIC_URL}{filtered_label.replace(" ","_")}')
                     e2 = rdflib.URIRef(f'{BASIC_URL}{filtered_entity.replace(" ","_")}')
@@ -174,10 +175,11 @@ class Onthology:
         for entity in self.other_entity_onthology.keys():
             for relation in self.other_entity_onthology[entity]:
                 label = relation.relation_type
+                filtered_entity = filter_regex.sub('',entity).strip()
+                filtered_label = filter_regex.sub('',label).strip()
                 for value in relation.to:
-                    filtered_entity = filter_regex.sub('',entity)
-                    filtered_label = filter_regex.sub('',label)
-                    filtered_value = filter_regex.sub('',value)
+                    filtered_value = filter_regex.sub('',value).strip()
+                    if filtered_value == '': continue
                     e1 = rdflib.URIRef(f'{BASIC_URL}{filtered_entity.replace(" ","_")}')
                     r = rdflib.URIRef(f'{BASIC_URL}{filtered_label.replace(" ","_")}')
                     e2 = rdflib.URIRef(f'{BASIC_URL}{filtered_value.replace(" ","_")}')

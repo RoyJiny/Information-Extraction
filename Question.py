@@ -62,6 +62,7 @@ class Question:
         self.entity = None
         self.relation = None
         self.question = filter_regex.sub('',question_str)
+        question_str = filter_regex.sub('',question_str)
         question_str = question_str.replace('?','')
         question_str = question_str.replace(':','')
 
@@ -71,7 +72,7 @@ class Question:
                 self.relation = question[1]
                 self.entity = question[2](question_str)
                 for ent in self.entity:     
-                    ent.replace(" ", "_")
+                    ent = ent.replace(" ", "_")
                 return
 
         # special general questions:

@@ -57,12 +57,10 @@ if __name__ == "__main__":
         g = load_onthology()
         parse_qst = Question(question)
         print(query(parse_qst,g))
-    elif sys.argv[1] == "test":
+    elif sys.argv[1] == "test": # our tester
         g = load_onthology()
-        color = False
-        if len(sys.argv) > 2 and sys.argv[2] == "--colored": color = True
-        if len(sys.argv) > 3 and sys.argv[3] == "--sanity": test_all(g,color,True)
-        else: test_all(g,color)
+        if len(sys.argv) > 2 and sys.argv[2] == "--sanity": test_all(g,True)
+        else: test_all(g)
     else:
         print(usage)
         exit(1)

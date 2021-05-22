@@ -1,20 +1,15 @@
 from Query import query
 from Question import Question
-from colorama import Fore, init, Style
 
-def test(question,answer,onthology,colored):
-    if colored: print(Fore.WHITE, end="")
+def test(question,answer,onthology):
     print(f"\nQ: {question}")
     q = Question(question)
     res = query(q,onthology)
     if res != answer:
-        if colored: print(Fore.RED, end="")
         print(f"Expected: '{answer}'")
-        if colored: print(Fore.RED, end="")
         print(f"Actual:   '{res}'")
         return 1
     else:
-        if colored: print(Fore.GREEN, end="")
         print(f"A: {res}")
         return 0
 
@@ -37,8 +32,7 @@ questions = [
 ]
 
 
-def test_all(onthology,colored,just_sanity=False):
-    if colored: init()
+def test_all(onthology,just_sanity=False):
     print("Running Tester\n")
     if just_sanity: print("[just sanity check]")
     error_count = 0
@@ -54,13 +48,11 @@ def test_all(onthology,colored,just_sanity=False):
 
     for q in questions:
         try:
-            error_count += test(q[0],q[1],onthology,colored)
+            error_count += test(q[0],q[1],onthology)
         except Exception as e:
-            if colored: print(Fore.RED, end="")
             print(f"Error: {str(e)}")
             error_count += 1
     
-    if colored: print(Style.RESET_ALL)
     print(f"\n\ncorrect: {len(questions)-error_count}")
     print(f"wrong: {error_count}")
     print(f"correctness: {(1-error_count/len(questions))*100} %")
